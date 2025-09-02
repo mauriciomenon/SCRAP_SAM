@@ -50,7 +50,6 @@ def find_or_download_geckodriver():
         "geckodriver.exe" if sys.platform.startswith("win") else "geckodriver",
         os.path.join(os.path.dirname(os.path.abspath(__file__)), "geckodriver.exe" if sys.platform.startswith("win") else "geckodriver"),
         os.path.join(os.path.dirname(os.path.abspath(__file__)), "drivers", "geckodriver.exe" if sys.platform.startswith("win") else "geckodriver"),
-        "C:\\WebDriver\\bin\\geckodriver.exe" if sys.platform.startswith("win") else "/usr/local/bin/geckodriver",
     ]
     
     for path in possible_paths:

@@ -6,33 +6,74 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import pandas as pd
+import platform
 
-# Caminhos relativos para o GeckoDriver e Firefox
+# Caminhos cross-platform para drivers e aplicações
 base_path = os.path.dirname(os.path.abspath(__file__))
-gecko_driver_path = os.path.join(base_path, "drivers", "geckodriver", "geckodriver.exe")
-firefox_binary_path = os.path.join(base_path, "drivers", "firefox", "firefox.exe")
 
-# Verifique se o Firefox foi instalado manualmente
-if not os.path.exists(firefox_binary_path):
-    print(f"Por favor, instale o Firefox manualmente a partir de {firefox_binary_path}.")
+# Detectar sistema operacional para ajustar caminhos
+system = platform.system().lower()
+if system == "windows":
+    gecko_driver_name = "geckodriver.exe"
+    firefox_binary_name = "firefox.exe"
+    profile_base_path = os.path.join(os.environ.get('APPDATA', ''), 'Mozilla', 'Firefox', 'Profiles')
+elif system == "darwin":  # macOS
+    gecko_driver_name = "geckodriver"
+    firefox_binary_name = "/Applications/Firefox.app/Contents/MacOS/firefox"
+    profile_base_path = os.path.expanduser("~/Library/Application Support/Firefox/Profiles")
+else:  # Linux e outros
+    gecko_driver_name = "geckodriver"
+    firefox_binary_name = "/usr/bin/firefox"
+    profile_base_path = os.path.expanduser("~/.mozilla/firefox")
+
+# Caminhos para drivers
+gecko_driver_path = os.path.join(base_path, "drivers", "geckodriver", gecko_driver_name)
+firefox_binary_path = os.path.join(base_path, "drivers", "firefox", firefox_binary_name)
+
+# Verificar se o GeckoDriver existe
+if not os.path.exists(gecko_driver_path):
+    print(f"GeckoDriver não encontrado em: {gecko_driver_path}")
+    print("Por favor, baixe o GeckoDriver compatível com seu sistema operacional.")
     exit(1)
 
-# Caminho para o perfil do Firefox
-profile_path = "C:/Users/menon/AppData/Roaming/Mozilla/Firefox/Profiles/xm9lfsi1.default-esr"
+# Verificar se o Firefox existe (opcional, pode usar o do sistema)
+if not os.path.exists(firefox_binary_path):
+    print(f"Firefox não encontrado em: {firefox_binary_path}")
+    print("Tentando usar Firefox do sistema...")
+    firefox_binary_path = None
+
+# Procurar perfil padrão do Firefox
+profile_path = None
+if os.path.exists(profile_base_path):
+    for item in os.listdir(profile_base_path):
+        if item.endswith('.default') or item.endswith('.default-esr'):
+            profile_path = os.path.join(profile_base_path, item)
+            break
+
+if not profile_path:
+    print("Perfil padrão do Firefox não encontrado. Usando perfil temporário.")
 
 # Configuração do WebDriver
 options = webdriver.FirefoxOptions()
-options.binary_location = firefox_binary_path
+if firefox_binary_path:
+    options.binary_location = firefox_binary_path
 
 # Configurar preferências de download para o Firefox
+downloads_path = os.path.join(base_path, "downloads")
+os.makedirs(downloads_path, exist_ok=True)
+
 options.set_preference("browser.download.folderList", 2)
 options.set_preference("browser.download.manager.showWhenStarting", False)
-options.set_preference("browser.download.dir", os.path.join(base_path, "downloads"))
+options.set_preference("browser.download.dir", downloads_path)
 options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/octet-stream")
 options.set_preference("pdfjs.disabled", True)  # Desabilita visualizador de PDF embutido
 
+# Adicionar perfil se encontrado
+if profile_path:
+    options.profile = profile_path
+
 # Especificar o caminho para o GeckoDriver
-service = Service(gecko_driver_path, log_output=os.path.join(base_path, "geckodriver.log"))
+service = Service(gecko_driver_path, log_output=os.path.join(base_path, "logs", "geckodriver.log"))
 
 driver = webdriver.Firefox(service=service, options=options)
 
