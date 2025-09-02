@@ -4,6 +4,64 @@ from dash import Dash, html, dcc, Input, Output, dash_table
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 import logging
+from dataclasses import dataclass
+from typing import Dict, Optional
+from datetime import datetime
+import sys
+import os
+
+# Adicionar o caminho para importar classes do dashboard
+sys.path.append(os.path.join(os.path.dirname(__file__), 'DashboardSM', 'Class', 'src'))
+
+# Classe SSAVisualizer será definida abaixo como fallback
+
+
+class SimpleSSAVisualizer:
+    """Visualizador simplificado para SSAs quando a classe completa não está disponível."""
+
+    def __init__(self, df: pd.DataFrame):
+        self.df = df
+
+    def create_status_chart(self):
+        """Cria gráfico de status das SSAs."""
+        if len(self.df) == 0:
+            return go.Figure()
+
+        # Contagem por status (usando coluna genérica se SSAColumns não estiver disponível)
+        try:
+            status_counts = self.df.iloc[:, 1].value_counts()  # Assumindo coluna 1 como status
+        except:
+            status_counts = pd.Series({"Dados não disponíveis": len(self.df)})
+
+        fig = go.Figure(data=[
+            go.Bar(x=status_counts.index, y=status_counts.values)
+        ])
+        fig.update_layout(
+            title="Status das SSAs",
+            xaxis_title="Status",
+            yaxis_title="Quantidade"
+        )
+        return fig
+
+    def create_priority_chart(self):
+        """Cria gráfico de prioridade das SSAs."""
+        if len(self.df) == 0:
+            return go.Figure()
+
+        try:
+            priority_counts = self.df.iloc[:, 12].value_counts()  # Assumindo coluna 12 como prioridade
+        except:
+            priority_counts = pd.Series({"Dados não disponíveis": len(self.df)})
+
+        fig = go.Figure(data=[
+            go.Pie(labels=priority_counts.index, values=priority_counts.values)
+        ])
+        fig.update_layout(title="Distribuição por Prioridade")
+        return fig
+
+
+# Usar a classe disponível ou o fallback
+SSAVisualizer = SimpleSSAVisualizer  # Usar sempre o fallback simplificado por enquanto
 
 
 @dataclass
@@ -372,17 +430,30 @@ class SSADashboard:
 
     def _prepare_table_data(self):
         """Prepara dados para a tabela."""
-        return [
-            {
-                "numero": row.iloc[SSAColumns.NUMERO_SSA],
-                "estado": row.iloc[SSAColumns.SITUACAO],
-                "resp_prog": row.iloc[SSAColumns.RESPONSAVEL_PROGRAMACAO],
-                "resp_exec": row.iloc[SSAColumns.RESPONSAVEL_EXECUCAO],
-                "semana_prog": row.iloc[SSAColumns.SEMANA_PROGRAMADA],
-                "prioridade": row.iloc[SSAColumns.GRAU_PRIORIDADE_EMISSAO],
-            }
-            for idx, row in self.df.iterrows()
-        ]
+        table_data = []
+        for idx, row in self.df.iterrows():
+            try:
+                # Garantir que os valores sejam do tipo correto para dash_table
+                numero = str(row.iloc[SSAColumns.NUMERO_SSA]) if pd.notna(row.iloc[SSAColumns.NUMERO_SSA]) else ""
+                estado = str(row.iloc[SSAColumns.SITUACAO]) if pd.notna(row.iloc[SSAColumns.SITUACAO]) else ""
+                resp_prog = str(row.iloc[SSAColumns.RESPONSAVEL_PROGRAMACAO]) if pd.notna(row.iloc[SSAColumns.RESPONSAVEL_PROGRAMACAO]) else ""
+                resp_exec = str(row.iloc[SSAColumns.RESPONSAVEL_EXECUCAO]) if pd.notna(row.iloc[SSAColumns.RESPONSAVEL_EXECUCAO]) else ""
+                semana_prog = str(row.iloc[SSAColumns.SEMANA_PROGRAMADA]) if pd.notna(row.iloc[SSAColumns.SEMANA_PROGRAMADA]) else ""
+                prioridade = str(row.iloc[SSAColumns.GRAU_PRIORIDADE_EMISSAO]) if pd.notna(row.iloc[SSAColumns.GRAU_PRIORIDADE_EMISSAO]) else ""
+
+                table_data.append({
+                    "numero": numero,
+                    "estado": estado,
+                    "resp_prog": resp_prog,
+                    "resp_exec": resp_exec,
+                    "semana_prog": semana_prog,
+                    "prioridade": prioridade,
+                })
+            except (IndexError, KeyError):
+                # Se houver erro ao acessar as colunas, pular esta linha
+                continue
+
+        return table_data
 
     def setup_callbacks(self):
         """Configura os callbacks para interatividade."""
