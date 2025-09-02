@@ -1,4 +1,5 @@
 import os
+import sys
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
@@ -8,27 +9,29 @@ import time
 import pandas as pd
 import platform
 
-# Caminhos cross-platform para drivers e aplicações
-base_path = os.path.dirname(os.path.abspath(__file__))
+# Adicionar o caminho do projeto para importar configurações
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, project_root)
+
+from config.settings import config
+
+# Usar configurações centralizadas
+base_path = config.PROJECT_ROOT
+downloads_path = config.DOWNLOADS_DIR
+logs_path = config.LOGS_DIR
 
 # Detectar sistema operacional para ajustar caminhos
 system = platform.system().lower()
 if system == "windows":
-    gecko_driver_name = "geckodriver.exe"
-    firefox_binary_name = "firefox.exe"
     profile_base_path = os.path.join(os.environ.get('APPDATA', ''), 'Mozilla', 'Firefox', 'Profiles')
 elif system == "darwin":  # macOS
-    gecko_driver_name = "geckodriver"
-    firefox_binary_name = "/Applications/Firefox.app/Contents/MacOS/firefox"
     profile_base_path = os.path.expanduser("~/Library/Application Support/Firefox/Profiles")
 else:  # Linux e outros
-    gecko_driver_name = "geckodriver"
-    firefox_binary_name = "/usr/bin/firefox"
     profile_base_path = os.path.expanduser("~/.mozilla/firefox")
 
-# Caminhos para drivers
-gecko_driver_path = os.path.join(base_path, "drivers", "geckodriver", gecko_driver_name)
-firefox_binary_path = os.path.join(base_path, "drivers", "firefox", firefox_binary_name)
+# Usar configurações do sistema
+gecko_driver_path = str(config.get_driver_path("geckodriver"))
+firefox_binary_path = config.get_firefox_path()
 
 # Verificar se o GeckoDriver existe
 if not os.path.exists(gecko_driver_path):
@@ -37,7 +40,7 @@ if not os.path.exists(gecko_driver_path):
     exit(1)
 
 # Verificar se o Firefox existe (opcional, pode usar o do sistema)
-if not os.path.exists(firefox_binary_path):
+if firefox_binary_path and not os.path.exists(firefox_binary_path):
     print(f"Firefox não encontrado em: {firefox_binary_path}")
     print("Tentando usar Firefox do sistema...")
     firefox_binary_path = None
@@ -59,12 +62,9 @@ if firefox_binary_path:
     options.binary_location = firefox_binary_path
 
 # Configurar preferências de download para o Firefox
-downloads_path = os.path.join(base_path, "downloads")
-os.makedirs(downloads_path, exist_ok=True)
-
 options.set_preference("browser.download.folderList", 2)
 options.set_preference("browser.download.manager.showWhenStarting", False)
-options.set_preference("browser.download.dir", downloads_path)
+options.set_preference("browser.download.dir", str(downloads_path))
 options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/octet-stream")
 options.set_preference("pdfjs.disabled", True)  # Desabilita visualizador de PDF embutido
 
@@ -73,13 +73,13 @@ if profile_path:
     options.profile = profile_path
 
 # Especificar o caminho para o GeckoDriver
-service = Service(gecko_driver_path, log_output=os.path.join(base_path, "logs", "geckodriver.log"))
+service = Service(gecko_driver_path, log_output=os.path.join(logs_path, "geckodriver.log"))
 
 driver = webdriver.Firefox(service=service, options=options)
 
 try:
-    # Acessa a página
-    driver.get("https://apps.itaipu.gov.br/SAM_SMA_Reports/SSAsExecuted.aspx")
+    # Acessa a página usando configuração centralizada
+    driver.get(config.ITAIPU_SAM_URL)
     
     # Aguarda o usuário fazer login manualmente
     print("Por favor, faça login manualmente e depois pressione Enter.")

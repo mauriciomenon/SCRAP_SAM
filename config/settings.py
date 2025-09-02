@@ -1,37 +1,66 @@
 import os
 from pathlib import Path
+import yaml
+from typing import Dict, Any, Optional
 
 # Configurações principais do projeto
 class Config:
     """Configuração centralizada do projeto SCRAP_SAM."""
 
-    # Caminhos base
-    PROJECT_ROOT = Path(__file__).parent.parent
-    SRC_DIR = PROJECT_ROOT / "src"
-    CONFIG_DIR = PROJECT_ROOT / "config"
-    DOWNLOADS_DIR = PROJECT_ROOT / "downloads"
-    DRIVERS_DIR = PROJECT_ROOT / "drivers"
-    LOGS_DIR = PROJECT_ROOT / "logs"
+    def __init__(self):
+        # Caminhos base
+        self.PROJECT_ROOT = Path(__file__).parent.parent
+        self.SRC_DIR = self.PROJECT_ROOT / "src"
+        self.CONFIG_DIR = self.PROJECT_ROOT / "config"
+        self.DOWNLOADS_DIR = self.PROJECT_ROOT / "downloads"
+        self.DRIVERS_DIR = self.PROJECT_ROOT / "drivers"
+        self.LOGS_DIR = self.PROJECT_ROOT / "logs"
 
-    # Criar diretórios necessários
-    DOWNLOADS_DIR.mkdir(exist_ok=True)
-    DRIVERS_DIR.mkdir(exist_ok=True)
-    LOGS_DIR.mkdir(exist_ok=True)
+        # Criar diretórios necessários
+        self.DOWNLOADS_DIR.mkdir(exist_ok=True)
+        self.DRIVERS_DIR.mkdir(exist_ok=True)
+        self.LOGS_DIR.mkdir(exist_ok=True)
 
-    # Configurações de scraping
-    SCRAPING_TIMEOUT = 30
-    MAX_RETRIES = 3
-    HEADLESS_MODE = False
+        # Carregar configurações do YAML
+        self._config = self._load_config()
 
-    # Configurações do dashboard
-    DASHBOARD_PORT = 8050
-    DASHBOARD_HOST = "127.0.0.1"
+        # Configurações com fallbacks
+        self.SCRAPING_TIMEOUT = self._get_config('scraping.timeout', 30)
+        self.MAX_RETRIES = self._get_config('scraping.max_retries', 3)
+        self.HEADLESS_MODE = self._get_config('scraping.headless', False)
+        self.DASHBOARD_PORT = self._get_config('dashboard.port', 8050)
+        self.DASHBOARD_HOST = self._get_config('dashboard.host', '127.0.0.1')
+        self.LOG_LEVEL = self._get_config('logging.level', 'INFO')
 
-    # URLs
-    ITAIPU_SAM_URL = "https://apps.itaipu.gov.br/SAM_SMA_Reports/SSAsExecuted.aspx"
+        # URLs
+        self.ITAIPU_SAM_URL = self._get_config('urls.sam_login',
+            "https://apps.itaipu.gov.br/SAM_SMA_Reports/SSAsExecuted.aspx")
 
-    @classmethod
-    def get_driver_path(cls, driver_name="geckodriver"):
+    def _load_config(self) -> Dict[str, Any]:
+        """Carrega configurações do arquivo YAML."""
+        config_file = self.CONFIG_DIR / "config.yaml"
+        if config_file.exists():
+            try:
+                with open(config_file, 'r', encoding='utf-8') as f:
+                    return yaml.safe_load(f) or {}
+            except Exception as e:
+                print(f"Erro ao carregar configuração: {e}")
+                return {}
+        return {}
+
+    def _get_config(self, key: str, default: Any = None) -> Any:
+        """Obtém valor de configuração com suporte a chaves aninhadas."""
+        keys = key.split('.')
+        value = self._config
+
+        for k in keys:
+            if isinstance(value, dict) and k in value:
+                value = value[k]
+            else:
+                return default
+        return value
+
+    def get_driver_path(self, driver_name: str = "geckodriver") -> Path:
         """Retorna o caminho para o driver especificado."""
         import platform
         system = platform.system().lower()
@@ -41,10 +70,9 @@ class Config:
         else:
             driver_file = driver_name
 
-        return cls.DRIVERS_DIR / driver_file
+        return self.DRIVERS_DIR / driver_file
 
-    @classmethod
-    def get_firefox_path(cls):
+    def get_firefox_path(self) -> Optional[str]:
         """Retorna o caminho para o Firefox."""
         import platform
         system = platform.system().lower()
@@ -54,7 +82,17 @@ class Config:
         elif system == "linux":
             return "/usr/bin/firefox"
         else:  # Windows
-            return cls.DRIVERS_DIR / "firefox" / "firefox.exe"
+            firefox_path = self.DRIVERS_DIR / "firefox" / "firefox.exe"
+            return str(firefox_path) if firefox_path.exists() else None
+
+    def save_config(self):
+        """Salva as configurações atuais no arquivo YAML."""
+        config_file = self.CONFIG_DIR / "config.yaml"
+        try:
+            with open(config_file, 'w', encoding='utf-8') as f:
+                yaml.dump(self._config, f, default_flow_style=False, allow_unicode=True)
+        except Exception as e:
+            print(f"Erro ao salvar configuração: {e}")
 
 # Instância global de configuração
 config = Config()
