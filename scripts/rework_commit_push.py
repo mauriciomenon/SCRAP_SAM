@@ -88,7 +88,7 @@ def main() -> int:
         lines.extend(
             git_commit_and_push(
                 repo=rework,
-                add_paths=[".flake8", "pyproject.toml", "mypy.ini", "log_instrucoes.md", "tests"],
+                add_paths=[".flake8", "pyproject.toml", "mypy.ini", "log_instrucoes.md", "tests", "README.md", ".gitignore"],
                 message=(
                     "chore(config): normalize flake8/mypy/black configs and sync instruction log; "
                     "no code changes"
