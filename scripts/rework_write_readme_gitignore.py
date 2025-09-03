@@ -8,11 +8,182 @@ Writes a short report to SCRAP_SAM/reports/rework_write_readme_gitignore.txt.
 from __future__ import annotations
 
 from pathlib import Path
+import hashlib
+import re
+from datetime import datetime
+from typing import Iterable, Tuple
 
 
-README = """# scrap_sam_rework
+EXCLUDE_DIRS = {".git", ".venv", "venv", "env", "__pycache__", "logs", "downloads", "drivers", "node_modules", "bkp"}
+COUNTABLE_EXTS = {".py", ".toml", ".ini", ".yml", ".yaml", ".md", ".txt"}
+
+
+def sha256_of(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def list_files(root: Path) -> set[Path]:
+    files: set[Path] = set()
+    for p in root.rglob("*"):
+        if p.is_dir():
+            # Skip excluded dirs
+            rel = p.relative_to(root)
+            parts = set(rel.parts)
+            if parts & EXCLUDE_DIRS:
+                continue
+            continue
+        rel = p.relative_to(root)
+        if any(part in EXCLUDE_DIRS for part in rel.parts):
+            continue
+        files.add(rel)
+    return files
+
+
+def summarize_diffs(orig: Path, rework: Path) -> Tuple[str, list[str], list[str], list[str]]:
+    oset = list_files(orig)
+    rset = list_files(rework)
+    added = sorted([str(p) for p in (rset - oset)])
+    removed = sorted([str(p) for p in (oset - rset)])
+    common = sorted([p for p in (rset & oset)])
+    modified: list[str] = []
+    for rel in common:
+        op = orig / rel
+        rp = rework / rel
+        try:
+            if op.stat().st_size != rp.stat().st_size:
+                modified.append(str(rel))
+            else:
+                if op.suffix in COUNTABLE_EXTS or rp.suffix in COUNTABLE_EXTS:
+                    if sha256_of(op) != sha256_of(rp):
+                        modified.append(str(rel))
+        except FileNotFoundError:
+            # Race or permissions; skip
+            continue
+    # Summary text
+    summary = (
+        f"Arquivos (rework vs original): adicionados={len(added)}, removidos={len(removed)}, modificados={len(modified)}, comuns={len(common)}"
+    )
+    return summary, added, removed, modified
+
+
+def maturity_metrics(rework: Path) -> Tuple[str, dict[str, int]]:
+    py_files = [p for p in rework.rglob("*.py") if not any(part in EXCLUDE_DIRS for part in p.relative_to(rework).parts)]
+    test_files = [p for p in py_files if "tests" in p.parts]
+    loc = 0
+    defs = 0
+    hinted = 0
+    for p in py_files:
+        try:
+            text = p.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        loc += sum(1 for _ in text.splitlines())
+        for m in re.finditer(r"^\s*def\s+\w+\s*\(.*?\)\s*(:|->)", text, flags=re.MULTILINE | re.DOTALL):
+            defs += 1
+            sig = m.group(0)
+            if "->" in sig or ":" in sig:
+                hinted += 1
+    ratio = (hinted / defs * 100.0) if defs else 0.0
+    metrics = {
+        "py_files": len(py_files),
+        "test_files": len(test_files),
+        "loc": loc,
+        "defs": defs,
+        "hinted_defs": hinted,
+        "hint_ratio_pct": int(ratio),
+    }
+    summary = (
+        f"Maturidade: arquivos .py={metrics['py_files']}, testes={metrics['test_files']}, LOC~{metrics['loc']}, "
+        f"funs={metrics['defs']}, anotadas~{metrics['hinted_defs']} (~{metrics['hint_ratio_pct']}%)."
+    )
+    return summary, metrics
+
+
+def discover_entry_points(rework: Path) -> list[tuple[str, str]]:
+    """Return a list of (module, command) for likely entry points."""
+    entries: list[tuple[str, str]] = []
+    for path in rework.rglob("*.py"):
+        rel = path.relative_to(rework)
+        if any(part in EXCLUDE_DIRS for part in rel.parts):
+            continue
+        # Consider scripts in src/ and top-level dashboard files
+        if rel.parts and (rel.parts[0] == "src" or rel.parts[0] == "src" or rel.parts[0] == "src"):
+            # Create module path
+            mod = ".".join(rel.with_suffix("").parts)
+            if rel.name.lower() in {"scrap_sam_main.py", "dashboard_sm.py", "report_from_excel.py"}:
+                entries.append((mod, f"python -m {mod}"))
+        elif rel.name in {"Dashboard_SM.py", "Report_from_excel.py"}:
+            mod = rel.with_suffix("").name
+            entries.append((mod, f"python {rel.as_posix()}"))
+    # Deduplicate
+    seen = set()
+    uniq: list[tuple[str, str]] = []
+    for mod, cmd in entries:
+        if mod not in seen:
+            uniq.append((mod, cmd))
+            seen.add(mod)
+    return uniq
+
+
+def read_sanity_summary(scrap_sam_ws: Path) -> str:
+    report = scrap_sam_ws / "reports" / "rework_sanity.txt"
+    if not report.exists():
+        return "Sanity: relatório não encontrado."
+    try:
+        txt = report.read_text(encoding="utf-8")
+    except Exception:
+        return "Sanity: relatório não legível."
+    # Heuristic extraction
+    lines = []
+    for line in txt.splitlines():
+        if any(k in line.lower() for k in ["black", "flake8", "pytest", "mypy", "syntax", "erros"]):
+            lines.append(line.strip())
+    if not lines:
+        lines = ["Sanity: relatório presente mas sem resumo detectável."]
+    return "\n".join(lines)
+
+
+def generate_readme(scrap_sam_ws: Path, rework: Path) -> str:
+    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    orig = scrap_sam_ws
+    summary, added, removed, modified = summarize_diffs(orig, rework)
+
+    # Write full diff into rework/reports for reference
+    (rework / "reports").mkdir(parents=True, exist_ok=True)
+    full_diff = rework / "reports" / "diff_files.txt"
+    full_diff.write_text(
+        "\n".join(
+            ["# Diff de arquivos (gerado)", summary, "", "## Adicionados:"]
+            + added
+            + ["", "## Removidos:"]
+            + removed
+            + ["", "## Modificados:"]
+            + modified
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    matur_txt, metrics = maturity_metrics(rework)
+    entries = discover_entry_points(rework)
+    sanity = read_sanity_summary(scrap_sam_ws)
+
+    added_preview = "\n".join(f"- {p}" for p in added[:50]) or "(nenhum)"
+    removed_preview = "\n".join(f"- {p}" for p in removed[:50]) or "(nenhum)"
+    modified_preview = "\n".join(f"- {p}" for p in modified[:50]) or "(nenhum)"
+
+    commands = "\n".join(f"- {m}: `{c}`" for m, c in entries[:10]) or "- Exemplos: `python -m src.scrapers.scrap_sam_main`"
+
+    return f"""
+# scrap_sam_rework
 
 Fork de modernização do SCRAP_SAM com foco em configuração e tooling atualizados (flake8/black/mypy/pytest) sem mudanças de comportamento em tempo de execução.
+
+Atualizado: {now}
 
 ## Visão geral
 
@@ -58,23 +229,35 @@ Notas:
 
 ## Como rodar
 
-- Ative o venv e execute seus scripts usuais (ex.: `python -m src.scrapers.scrap_sam_main`).
+{commands}
+
 - Teste rápido: `pytest -q`.
 - Lints: `flake8` e `black --check .`; tipos: `mypy`.
 
 ## Diferenças em relação ao SCRAP_SAM (original)
 
-Arquivos e estrutura:
-- Adicionados: `.flake8`, `pyproject.toml` (black+mypy), `mypy.ini`, `tests/test_sanity_imports.py`, `log_instrucoes.md`.
-- Mantidos: módulos de runtime e scripts originais, sem alteração de comportamento.
+{summary}
 
-Versões e tooling:
-- Python alvo: 3.13.
-- Ferramentas: black 25.x, flake8 7.x, mypy 1.17.x, pytest 8.x (conforme ambiente).
-- Stubs opcionais sugeridos: `pandas-stubs`, `types-requests`, `types-PyYAML`, `types-psutil`.
+Prévia (50 itens máx por seção). Listas completas: `reports/diff_files.txt`.
 
-Implementações:
-- Ajustes apenas em configuração e limpeza segura (espaços/`unused imports` pontuais). Nenhuma alteração de lógica de execução.
+### Adicionados (rework):
+{added_preview}
+
+### Removidos (presentes no original, ausentes no rework):
+{removed_preview}
+
+### Modificados (presentes em ambos, conteúdo diferente):
+{modified_preview}
+
+## Maturidade e qualidade
+
+- {matur_txt}
+- Sanity recente (black/flake8/mypy/pytest):
+{sanity}
+
+Presença de tooling/config:
+- `.flake8`, `pyproject.toml` (black+mypy), `mypy.ini`, `tests/test_sanity_imports.py`, `log_instrucoes.md` adicionados no rework.
+- `.python-version` e `.envrc` versionados para ambiente consistente.
 
 ## Node (opcional)
 
@@ -85,10 +268,9 @@ Se você utilizar ferramentas Node neste repo:
 ## Convenções
 
 - Ambientes: mantenha apenas UM venv em `.venv/` na raiz. Não duplique ambientes.
-- Configs: `.python-version` e `.envrc` são a base; ajustes específicos de SO podem ser documentados no `log_instrucoes.md`.
-- Formatação: `black` (linhas 88). Lints: `flake8` com ignorados E203,W503,E402,E501,E722. Tipos: `mypy` com overrides por terceiro.
-"""
+-- Configs: `.python-version` e `.envrc` são a base; ajustes específicos de SO podem ser documentados no `log_instrucoes.md`.
 
+"""
 
 GITIGNORE_ADD = [
     "# Python",
@@ -136,8 +318,9 @@ def main() -> int:
         print(out)
         return 1
 
-    # Write README.md
-    (rework / "README.md").write_text(README, encoding="utf-8")
+    # Build and write README.md
+    readme = generate_readme(ws, rework)
+    (rework / "README.md").write_text(readme, encoding="utf-8")
     lines.append("README.md escrito/atualizado.")
 
     # Merge .gitignore
