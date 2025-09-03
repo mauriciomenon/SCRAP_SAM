@@ -1,0 +1,1 @@
+mypy: no_implicit_optional = false atualizado.

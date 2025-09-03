@@ -1,0 +1,1 @@
+Overrides do mypy inseridos/atualizados com sucesso (ignore_missing_imports para libs sem stubs).

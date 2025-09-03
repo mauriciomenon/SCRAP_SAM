@@ -1,0 +1,3 @@
+Arquivos criados:
+- /Users/menon/git/scrap_sam_rework/.flake8
+- /Users/menon/git/scrap_sam_rework/pyproject.toml

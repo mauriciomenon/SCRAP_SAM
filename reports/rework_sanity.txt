@@ -1,0 +1,452 @@
+Usando: /Users/menon/git/scrap_sam_rework/.venv/bin/python
+Python:
+3.13.7
+/Users/menon/git/scrap_sam_rework/.venv/bin/python
+
+Pip:
+pip 25.2 from /Users/menon/git/scrap_sam_rework/.venv/lib/python3.13/site-packages/pip (python 3.13)
+
+[OK] pandas ->
+pandas 2.3.2
+
+[OK] selenium ->
+selenium 4.35.0
+
+[OK] playwright ->
+playwright ok
+
+[OK] dash ->
+dash 3.2.0
+
+[OK] plotly ->
+plotly 6.3.0
+
+[OK] requests ->
+requests 2.32.5
+
+[OK] bs4 ->
+beautifulsoup4 ok
+
+[OK] yaml ->
+pyyaml ok
+
+
+Checando ferramentas de desenvolvimento (não-destrutivo):
+[OK] black --version ->
+python -m black, 25.1.0 (compiled: yes)
+Python (CPython) 3.13.7
+
+[OK] flake8 --version ->
+7.3.0 (mccabe: 0.7.0, pycodestyle: 2.14.0, pyflakes: 3.4.0) CPython 3.13.7 on
+Darwin
+
+[OK] mypy --version ->
+mypy 1.17.1 (compiled: yes)
+
+[OK] pytest --version ->
+pytest 8.4.1
+
+black --check:
+All done! ✨ 🍰 ✨
+31 files would be left unchanged.
+
+flake8:
+src/dashboard/Class/main.py:10:1: F401 'dataclasses.dataclass' imported but unused
+src/dashboard/Class/main.py:11:1: F811 redefinition of unused 'datetime' from line 6
+src/dashboard/Class/main.py:11:1: F401 'datetime.datetime' imported but unused
+src/dashboard/Class/main.py:11:1: F401 'datetime.date' imported but unused
+src/dashboard/Class/main.py:12:1: F811 redefinition of unused 'pd' from line 4
+src/dashboard/Class/main.py:13:1: F401 'numpy as np' imported but unused
+src/dashboard/Class/main.py:14:1: F401 'plotly.express as px' imported but unused
+src/dashboard/Class/main.py:15:1: F401 'plotly.graph_objects as go' imported but unused
+src/dashboard/Class/main.py:16:1: F401 'dash.Dash' imported but unused
+src/dashboard/Class/main.py:16:1: F401 'dash.dcc' imported but unused
+src/dashboard/Class/main.py:16:1: F401 'dash.html' imported but unused
+src/dashboard/Class/main.py:16:1: F401 'dash.Input' imported but unused
+src/dashboard/Class/main.py:16:1: F401 'dash.Output' imported but unused
+src/dashboard/Class/main.py:16:1: F401 'dash.State' imported but unused
+src/dashboard/Class/main.py:16:1: F401 'dash.MATCH' imported but unused
+src/dashboard/Class/main.py:16:1: F401 'dash.ALL' imported but unused
+src/dashboard/Class/main.py:17:1: F401 'dash_bootstrap_components as dbc' imported but unused
+src/dashboard/Class/main.py:18:1: F811 redefinition of unused 'logging' from line 3
+src/dashboard/Class/main.py:19:1: F811 redefinition of unused 'dash_table' from line 16
+src/dashboard/Class/main.py:19:1: F401 'dash.dash_table' imported but unused
+src/dashboard/Class/main.py:20:1: F401 'typing.Union' imported but unused
+src/dashboard/Class/main.py:20:1: F401 'typing.Tuple' imported but unused
+src/dashboard/Class/main.py:21:1: F401 'typing.Dict' imported but unused
+src/dashboard/Class/main.py:21:1: F401 'typing.List' imported but unused
+src/dashboard/Class/main.py:21:1: F401 'typing.Optional' imported but unused
+src/dashboard/Class/main.py:22:1: F401 'dash' imported but unused
+src/dashboard/Class/main.py:23:1: F811 redefinition of unused 'warnings' from line 5
+src/dashboard/Class/main.py:26:1: F401 'xlsxwriter' imported but unused
+src/dashboard/Class/main.py:27:1: F401 'pdfkit' imported but unused
+src/dashboard/Class/main.py:29:1: F811 redefinition of unused 'os' from line 1
+src/dashboard/Class/main.py:30:1: F811 redefinition of unused 'sys' from line 2
+src/dashboard/Class/main.py:31:1: F811 redefinition of unused 'logging' from line 18
+src/dashboard/Class/main.py:32:1: F811 redefinition of unused 'Path' from line 7
+src/dashboard/Class/main.py:41:1: F401 'src.data.ssa_data.SSAData' imported but unused
+src/dashboard/Class/main.py:42:1: F401 'src.data.ssa_columns.SSAColumns' imported but unused
+src/dashboard/Class/main.py:44:1: F401 'src.utils.date_utils.diagnose_dates' imported but unused
+src/dashboard/Class/main.py:175:47: E226 missing whitespace around arithmetic operator
+src/dashboard/Class/main.py:175:52: E226 missing whitespace around arithmetic operator
+src/dashboard/Class/main.py:193:1: F811 redefinition of unused 'LogManager' from line 43
+src/dashboard/Class/main.py:221:9: F401 'xlsxwriter' imported but unused
+src/dashboard/Class/main.py:221:9: F811 redefinition of unused 'xlsxwriter' from line 26
+src/dashboard/Class/run.py:1:1: F401 'os' imported but unused
+src/dashboard/Class/run.py:37:1: F401 'src.utils.log_manager.LogManager' imported but unused
+src/dashboard/Class/src/dashboard/kpi_calculator.py:2:1: F401 'datetime.datetime' imported but unused
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:23:9: F841 local variable 'suppress_callback_exceptions' is assigned to but never used
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:203:50: E226 missing whitespace around arithmetic operator
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:354:66: E226 missing whitespace around arithmetic operator
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:480:9: F841 local variable 'state_colors' is assigned to but never used
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:766:1: W293 blank line contains whitespace
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:788:1: W293 blank line contains whitespace
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:791:1: W293 blank line contains whitespace
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:801:1: W293 blank line contains whitespace
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:989:5: F811 redefinition of unused '_get_chart_config' from line 150
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:1023:9: F841 local variable 'stats' is assigned to but never used
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:1024:9: F841 local variable 'state_counts' is assigned to but never used
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:1558:5: F811 redefinition of unused 'setup_callbacks' from line 544
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:1826:1: W293 blank line contains whitespace
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:1829:1: W293 blank line contains whitespace
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:1842:1: W293 blank line contains whitespace
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:4:1: F401 'datetime.datetime' imported but unused
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:6:1: F401 '..utils.log_manager.LogManager' imported but unused
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:230:42: E226 missing whitespace around arithmetic operator
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:230:45: E226 missing whitespace around arithmetic operator
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:258:58: E226 missing whitespace around arithmetic operator
+src/dashboard/Class/src/data/data_loader.py:4:1: F401 'os' imported but unused
+src/dashboard/Class/src/data/data_loader.py:9:1: F401 '..utils.file_manager.FileManager' imported but unused
+src/dashboard/Class/src/data/data_loader.py:30:9: F401 'datetime.datetime' imported but unused
+src/dashboard/Class/src/data/ssa_data.py:5:1: F401 'pandas as pd' imported but unused
+src/dashboard/Class/src/utils/data_validator.py:3:1: F401 'typing.Optional' imported but unused
+src/dashboard/Class/src/utils/log_manager.py:8:1: F401 'flask.request' imported but unused
+src/dashboard/Class/src/utils/log_manager.py:43:13: F811 redefinition of unused 'request' from line 8
+src/dashboard/Dashboard_SM.py:9:1: F401 'Report_from_excel.SSAData' imported but unused
+src/dashboard/Dashboard_SM.py:9:1: F401 'Report_from_excel.DataLoader' imported but unused
+src/dashboard/Dashboard_SM.py:9:1: F401 'Report_from_excel.SSAAnalyzer' imported but unused
+src/dashboard/Dashboard_SM.py:9:1: F401 'Report_from_excel.SSAReporter' imported but unused
+src/dashboard/Dashboard_SM.py:49:9: F841 local variable 'stats' is assigned to but never used
+src/dashboard/Report_from_excel.py:5:1: F401 'plotly.express as px' imported but unused
+src/dashboard/Report_from_excel.py:10:1: F811 redefinition of unused 'dash_table' from line 7
+src/dashboard/Report_from_excel.py:17:1: F401 'xlsxwriter' imported but unused
+src/dashboard/Report_from_excel.py:86:9: F401 'datetime.datetime' imported but unused
+src/dashboard/Report_from_excel.py:374:30: F541 f-string is missing placeholders
+src/dashboard/Report_from_excel.py:1239:42: E226 missing whitespace around arithmetic operator
+src/dashboard/Report_from_excel.py:1239:45: E226 missing whitespace around arithmetic operator
+src/dashboard/Report_from_excel.py:1263:66: E226 missing whitespace around arithmetic operator
+src/dashboard/Report_from_excel.py:1452:13: F841 local variable 'header_format' is assigned to but never used
+src/dashboard/Report_from_excel.py:2114:9: F841 local variable 'state_counts' is assigned to but never used
+src/dashboard/Report_from_excel.py:3218:5: F811 redefinition of unused '_prepare_table_data' from line 3031
+src/dashboard/Report_from_excel.py:3337:50: E226 missing whitespace around arithmetic operator
+src/dashboard/Report_from_excel.py:3390:21: F841 local variable 'ssas_by_category' is assigned to but never used
+src/dashboard/Report_from_excel.py:3424:75: E226 missing whitespace around arithmetic operator
+src/dashboard/Report_from_excel.py:3464:70: E226 missing whitespace around arithmetic operator
+src/dashboard/Report_from_excel.py:3718:9: F401 'xlsxwriter' imported but unused
+src/dashboard/Report_from_excel.py:3718:9: F811 redefinition of unused 'xlsxwriter' from line 17
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:992:23: F541 f-string is missing placeholders
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:997:23: F541 f-string is missing placeholders
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:992:23: F541 f-string is missing placeholders
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:997:23: F541 f-string is missing placeholders
+src/scrapers/legacy/Scrap-Playwright.py:7:1: F401 'playwright.sync_api.Page' imported but unused
+src/scrapers/legacy/Scrap-Playwright.py:9:1: F401 'datetime.datetime' imported but unused
+src/scrapers/legacy/Scrap-Playwright.py:11:1: F401 'typing.Dict' imported but unused
+src/scrapers/legacy/Scrap-Playwright.py:11:1: F401 'typing.Optional' imported but unused
+src/scrapers/legacy/Scrap-Playwright_otimizado.py:9:1: F401 'datetime.datetime' imported but unused
+src/scrapers/legacy/Scrap-Playwright_otimizado.py:11:1: F401 'typing.Dict' imported but unused
+src/scrapers/scrap_sam_main.py:992:23: F541 f-string is missing placeholders
+src/scrapers/scrap_sam_main.py:997:23: F541 f-string is missing placeholders
+src/utils/Acha_botao.py:60:50: E226 missing whitespace around arithmetic operator
+src/utils/Acha_botao.py:60:58: E226 missing whitespace around arithmetic operator
+src/utils/Acha_botao.py:61:37: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:6:1: F401 'thread' imported but unused
+src/utils/lixo_para_servir_de_base.py:15:1: F401 'psutil' imported but unused
+src/utils/lixo_para_servir_de_base.py:16:1: F401 'schedule' imported but unused
+src/utils/lixo_para_servir_de_base.py:28:1: F401 'dash.dash_table' imported but unused
+src/utils/lixo_para_servir_de_base.py:28:1: F401 'dash.callback_context' imported but unused
+src/utils/lixo_para_servir_de_base.py:33:1: F401 'xlsxwriter' imported but unused
+src/utils/lixo_para_servir_de_base.py:34:1: F401 'pdfkit' imported but unused
+src/utils/lixo_para_servir_de_base.py:36:1: F811 redefinition of unused 'dataclass' from line 2
+src/utils/lixo_para_servir_de_base.py:37:1: F811 redefinition of unused 'datetime' from line 3
+src/utils/lixo_para_servir_de_base.py:38:1: F811 redefinition of unused 'Dict' from line 8
+src/utils/lixo_para_servir_de_base.py:38:1: F811 redefinition of unused 'Optional' from line 8
+src/utils/lixo_para_servir_de_base.py:90:5: F821 undefined name 'self'
+src/utils/lixo_para_servir_de_base.py:90:23: F821 undefined name 'data'
+src/utils/lixo_para_servir_de_base.py:91:5: F821 undefined name 'self'
+src/utils/lixo_para_servir_de_base.py:91:20: F821 undefined name 'self'
+src/utils/lixo_para_servir_de_base.py:91:37: F821 undefined name 'data'
+src/utils/lixo_para_servir_de_base.py:92:5: F821 undefined name 'self'
+src/utils/lixo_para_servir_de_base.py:92:27: F821 undefined name 'data'
+src/utils/lixo_para_servir_de_base.py:93:5: F821 undefined name 'self'
+src/utils/lixo_para_servir_de_base.py:93:23: F821 undefined name 'data'
+src/utils/lixo_para_servir_de_base.py:94:5: F821 undefined name 'self'
+src/utils/lixo_para_servir_de_base.py:94:26: F821 undefined name 'data'
+src/utils/lixo_para_servir_de_base.py:95:5: F821 undefined name 'self'
+src/utils/lixo_para_servir_de_base.py:95:23: F821 undefined name 'data'
+src/utils/lixo_para_servir_de_base.py:96:5: F821 undefined name 'self'
+src/utils/lixo_para_servir_de_base.py:96:28: F821 undefined name 'data'
+src/utils/lixo_para_servir_de_base.py:699:13: F841 local variable 'header_format' is assigned to but never used
+src/utils/lixo_para_servir_de_base.py:765:9: F811 redefinition of unused 'pdfkit' from line 34
+src/utils/lixo_para_servir_de_base.py:1371:5: F811 redefinition of unused '_validate_dates' from line 1258
+src/utils/lixo_para_servir_de_base.py:1384:5: F811 redefinition of unused '_validate_priorities' from line 1267
+src/utils/lixo_para_servir_de_base.py:1395:5: F811 redefinition of unused '_validate_relationships' from line 1280
+src/utils/lixo_para_servir_de_base.py:1555:44: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:1555:57: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:1567:44: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:1567:57: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:1579:44: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:1579:57: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:3223:5: F811 redefinition of unused 'get_overall_health_score' from line 1746
+src/utils/lixo_para_servir_de_base.py:3232:9: F841 local variable 'responsiveness' is assigned to but never used
+src/utils/lixo_para_servir_de_base.py:3383:49: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:3409:48: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:3838:77: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:3890:32: F541 f-string is missing placeholders
+src/utils/lixo_para_servir_de_base.py:3908:82: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:4001:16: F821 undefined name 'dash'
+src/utils/lixo_para_servir_de_base.py:4505:17: F821 undefined name 'LinearRegression'
+src/utils/lixo_para_servir_de_base.py:4594:17: F821 undefined name 'LogisticRegression'
+src/utils/lixo_para_servir_de_base.py:4682:17: F821 undefined name 'LinearRegression'
+src/utils/lixo_para_servir_de_base.py:5142:9: F841 local variable 'quality' is assigned to but never used
+src/utils/lixo_para_servir_de_base.py:5164:92: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:5183:97: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:5202:101: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:5279:9: F811 redefinition of unused 'pdfkit' from line 34
+src/utils/lixo_para_servir_de_base.py:5380:9: F821 undefined name 'temporal_perf'
+src/utils/lixo_para_servir_de_base.py:5391:17: F821 undefined name 'temporal_perf'
+src/utils/lixo_para_servir_de_base.py:5517:85: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:5722:20: F821 undefined name 'config'
+src/utils/lixo_para_servir_de_base.py:5722:49: F821 undefined name 'config'
+src/utils/lixo_para_servir_de_base.py:5813:13: F811 redefinition of unused 'psutil' from line 15
+src/utils/lixo_para_servir_de_base.py:5824:13: F811 redefinition of unused 'psutil' from line 15
+src/utils/lixo_para_servir_de_base.py:6678:9: F811 redefinition of unused 'psutil' from line 15
+src/utils/lixo_para_servir_de_base.py:6695:9: F811 redefinition of unused 'psutil' from line 15
+src/utils/lixo_para_servir_de_base.py:6710:9: F811 redefinition of unused 'psutil' from line 15
+src/utils/lixo_para_servir_de_base.py:6727:9: F811 redefinition of unused 'psutil' from line 15
+src/utils/lixo_para_servir_de_base.py:6844:64: E226 missing whitespace around arithmetic operator
+src/utils/lixo_para_servir_de_base.py:7034:1: F811 redefinition of unused 'main' from line 5316
+
+mypy --show-config:
+usage: mypy [-h] [-v] [-V] [more options; see below]
+            [-m MODULE] [-p PACKAGE] [-c PROGRAM_TEXT] [files ...]
+mypy: error: unrecognized arguments: --show-config
+
+mypy:
+src/dashboard/Class/src/data/ssa_columns.py:146: error: Argument 2 to "isinstance" has incompatible type "object"; expected "_ClassInfo"  [arg-type]
+src/dashboard/Class/src/dashboard/kpi_calculator.py:64: error: Incompatible return value type (got "dict[Any, Any | None]", expected "dict[str, float]")  [return-value]
+src/dashboard/Class/src/utils/file_manager.py:102: error: Item "None" of "datetime | None" has no attribute "strftime"  [union-attr]
+src/dashboard/Class/src/utils/data_validator.py:32: error: Need type annotation for "resp_counts" (hint: "resp_counts: dict[<type>, <type>] = ...")  [var-annotated]
+src/dashboard/Class/src/utils/data_validator.py:60: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:61: error: Dict entry 1 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:64: error: Dict entry 2 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:67: error: Dict entry 3 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:70: error: Dict entry 4 has incompatible type "str": "datetime"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:102: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Class/src/utils/data_validator.py:113: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Class/src/utils/data_validator.py:121: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Class/src/utils/data_validator.py:130: error: Argument 1 to "len" has incompatible type "object"; expected "Sized"  [arg-type]
+src/dashboard/Class/src/utils/data_validator.py:135: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Class/src/utils/data_validator.py:147: error: Need type annotation for "real_counts" (hint: "real_counts: dict[<type>, <type>] = ...")  [var-annotated]
+src/dashboard/Class/src/utils/data_validator.py:202: error: Unsupported right operand type for in ("object")  [operator]
+src/dashboard/Class/src/utils/data_validator.py:203: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Class/src/utils/data_validator.py:207: error: Value of type "object" is not indexable  [index]
+src/dashboard/Class/src/utils/data_validator.py:208: error: Value of type "object" is not indexable  [index]
+src/dashboard/Class/src/utils/data_validator.py:214: error: Unsupported right operand type for in ("object")  [operator]
+src/dashboard/Class/src/utils/data_validator.py:215: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Class/src/utils/data_validator.py:219: error: Value of type "object" is not indexable  [index]
+src/dashboard/Class/src/utils/data_validator.py:220: error: Value of type "object" is not indexable  [index]
+src/dashboard/Class/src/utils/data_validator.py:228: error: Incompatible return value type (got "None", expected "dict[Any, Any]")  [return-value]
+src/dashboard/Class/src/data/data_loader.py:21: error: Need type annotation for "ssa_objects" (hint: "ssa_objects: list[<type>] = ...")  [var-annotated]
+src/dashboard/Class/src/data/data_loader.py:109: error: Argument 1 to "len" has incompatible type "None"; expected "Sized"  [arg-type]
+src/dashboard/Class/src/data/data_loader.py:150: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:151: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:157: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:158: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:174: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:175: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:185: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:192: error: Value of type "None" is not indexable  [index]
+src/dashboard/Class/src/data/data_loader.py:192: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:197: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:199: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:208: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:210: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:217: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:245: error: Argument 1 to "len" has incompatible type "None"; expected "Sized"  [arg-type]
+src/dashboard/Class/src/data/data_loader.py:312: error: "None" has no attribute "iterrows"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:317: error: Incompatible types in assignment (expression has type "None", variable has type "str")  [assignment]
+src/dashboard/Class/src/data/data_loader.py:328: error: Incompatible types in assignment (expression has type "None", variable has type "str")  [assignment]
+src/dashboard/Class/src/data/data_loader.py:348: error: Argument "emitida_em" to "SSAData" has incompatible type "Any | None"; expected "datetime"  [arg-type]
+src/scrapers/legacy/scrap_BeautifulSoup.py:20: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "name"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:21: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:21: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:22: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:22: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:23: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:23: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Argument 1 to "join" of "str" has incompatible type "Any | str | AttributeValueList | None"; expected "Iterable[str]"  [arg-type]
+src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Argument 2 to "get" of "Tag" has incompatible type "list[Never]"; expected "str | AttributeValueList | None"  [arg-type]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: error: No overload variant of "update" of "MutableMapping" matches argument type "object"  [call-overload]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note: Possible overload variants:
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, SupportsKeysAndGetItem[str, object], /) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, SupportsKeysAndGetItem[str, object], /, **kwargs: object) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, Iterable[tuple[str, object]], /) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, Iterable[tuple[str, object]], /, **kwargs: object) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, **kwargs: object) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:72: error: "object" has no attribute "update"  [attr-defined]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:223: error: "SSAVisualizer" has no attribute "_create_empty_chart"; maybe "create_priority_chart" or "create_week_chart"?  [attr-defined]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:277: error: "SSAVisualizer" has no attribute "_create_empty_chart"; maybe "create_priority_chart" or "create_week_chart"?  [attr-defined]
+src/utils/Acha_botao.py:46: error: "WebElement" has no attribute "find_element_by_xpath"  [attr-defined]
+src/utils/Acha_botao.py:56: error: "WebDriver" has no attribute "find_elements_by_xpath"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:90: error: Name "self" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:90: error: Name "data" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:91: error: Name "self" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:91: error: Name "data" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:92: error: Name "self" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:92: error: Name "data" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:93: error: Name "self" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:93: error: Name "data" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:94: error: Name "self" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:94: error: Name "data" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:95: error: Name "self" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:95: error: Name "data" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:96: error: Name "self" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:96: error: Name "data" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:1261: error: Unsupported target for indexed assignment ("Any | None")  [index]
+src/utils/lixo_para_servir_de_base.py:1261: error: Value of type "Any | None" is not indexable  [index]
+src/utils/lixo_para_servir_de_base.py:1270: error: Value of type "Any | None" is not indexable  [index]
+src/utils/lixo_para_servir_de_base.py:1282: error: Item "None" of "Any | None" has no attribute "columns"  [union-attr]
+src/utils/lixo_para_servir_de_base.py:1285: error: Value of type "Any | None" is not indexable  [index]
+src/utils/lixo_para_servir_de_base.py:1286: error: Value of type "Any | None" is not indexable  [index]
+src/utils/lixo_para_servir_de_base.py:1338: error: Incompatible return value type (got "list[SSAData] | None", expected "list[SSAData]")  [return-value]
+src/utils/lixo_para_servir_de_base.py:1371: error: Name "_validate_dates" already defined on line 1258  [no-redef]
+src/utils/lixo_para_servir_de_base.py:1384: error: Name "_validate_priorities" already defined on line 1267  [no-redef]
+src/utils/lixo_para_servir_de_base.py:1395: error: Name "_validate_relationships" already defined on line 1280  [no-redef]
+src/utils/lixo_para_servir_de_base.py:1622: error: "DataLoader" has no attribute "_cache"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:2097: error: Unsupported target for indexed assignment ("object")  [index]
+src/utils/lixo_para_servir_de_base.py:2114: error: Unsupported target for indexed assignment ("object")  [index]
+src/utils/lixo_para_servir_de_base.py:2202: error: Need type annotation for "intervals"  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:2282: error: "KPICalculator" has no attribute "_calculate_satisfaction_indicators"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:2307: error: Unsupported target for indexed assignment ("object")  [index]
+src/utils/lixo_para_servir_de_base.py:2318: error: Unsupported target for indexed assignment ("object")  [index]
+src/utils/lixo_para_servir_de_base.py:2509: error: Incompatible types in assignment (expression has type "float", target has type "int")  [assignment]
+src/utils/lixo_para_servir_de_base.py:2510: error: Incompatible types in assignment (expression has type "floating[Any]", target has type "int")  [assignment]
+src/utils/lixo_para_servir_de_base.py:2530: error: Need type annotation for "distribution"  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:2617: error: Incompatible types in assignment (expression has type "ndarray[tuple[Any, ...], dtype[Any]]", variable has type "list[int]")  [assignment]
+src/utils/lixo_para_servir_de_base.py:3171: error: "KPICalculator" has no attribute "_analyze_priority_patterns"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:3172: error: "KPICalculator" has no attribute "_analyze_sector_patterns"; maybe "_analyze_volume_patterns" or "_analyze_weekly_pattern"?  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:3173: error: "KPICalculator" has no attribute "_analyze_correlations"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:3223: error: Name "get_overall_health_score" already defined on line 1746  [no-redef]
+src/utils/lixo_para_servir_de_base.py:3560: error: "KPICalculator" has no attribute "kpi_calculator"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:3608: error: Need type annotation for "bottlenecks"  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:3705: error: Need type annotation for "efficiency_metrics"  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:3940: error: Need type annotation for "_cache" (hint: "_cache: dict[<type>, <type>] = ...")  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:3944: error: "SSADashboard" has no attribute "setup_callbacks"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:3945: error: "SSADashboard" has no attribute "_setup_export_callbacks"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:3947: error: "SSADashboard" has no attribute "_setup_alert_system"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:3948: error: "SSADashboard" has no attribute "_setup_customization_options"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:4150: error: Need type annotation for "node_adjacencies"  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:4505: error: Name "LinearRegression" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:4594: error: Name "LogisticRegression" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:4682: error: Name "LinearRegression" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:5061: error: Invalid index type "tuple[str, ...]" for "dict[tuple[str, str], dict[str, str]]"; expected type "tuple[str, str]"  [index]
+src/utils/lixo_para_servir_de_base.py:5146: error: "SSADashboard" has no attribute "_create_performance_charts"; maybe "_create_performance_analysis" or "_create_advanced_charts"?  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:5380: error: Name "temporal_perf" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:5391: error: Name "temporal_perf" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:5722: error: Name "config" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:6028: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+src/utils/lixo_para_servir_de_base.py:6119: error: "object" not callable  [operator]
+src/utils/lixo_para_servir_de_base.py:6193: error: Argument 1 to "append" of "list" has incompatible type "dict[str, object]"; expected "Callable[..., Any]"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:6360: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+src/utils/lixo_para_servir_de_base.py:6403: error: "object" not callable  [operator]
+src/utils/lixo_para_servir_de_base.py:6483: error: Argument 1 to "append" of "list" has incompatible type "dict[str, object]"; expected "Callable[..., Any]"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:6976: error: Argument 2 to "_filter_log_entry" of "AdvancedLogger" has incompatible type "str | None"; expected "str"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:6976: error: Argument 3 to "_filter_log_entry" of "AdvancedLogger" has incompatible type "datetime | None"; expected "datetime"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:6976: error: Argument 4 to "_filter_log_entry" of "AdvancedLogger" has incompatible type "datetime | None"; expected "datetime"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:7034: error: Name "main" already defined on line 5316  [no-redef]
+src/utils/lixo_para_servir_de_base.py:7036: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+src/dashboard/Report_from_excel.py:20: error: Cannot find implementation or library stub for module named "timedelta"  [import-not-found]
+src/dashboard/Report_from_excel.py:20: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+src/dashboard/Report_from_excel.py:79: error: Need type annotation for "ssa_objects" (hint: "ssa_objects: list[<type>] = ...")  [var-annotated]
+src/dashboard/Report_from_excel.py:198: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:199: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:205: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:206: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:222: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:223: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:232: error: Value of type "None" is not indexable  [index]
+src/dashboard/Report_from_excel.py:232: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:237: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:239: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:248: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:250: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:257: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:724: error: "SSAWeekAnalyzer" has no attribute "week_analyzer"  [attr-defined]
+src/dashboard/Report_from_excel.py:728: error: "SSAWeekAnalyzer" has no attribute "_get_standard_layout"  [attr-defined]
+src/dashboard/Report_from_excel.py:764: error: "SSAWeekAnalyzer" has no attribute "_get_standard_layout"  [attr-defined]
+src/dashboard/Report_from_excel.py:926: error: No overload variant of "update" of "MutableMapping" matches argument type "object"  [call-overload]
+src/dashboard/Report_from_excel.py:926: note: Possible overload variants:
+src/dashboard/Report_from_excel.py:926: note:     def update(self, SupportsKeysAndGetItem[str, object], /) -> None
+src/dashboard/Report_from_excel.py:926: note:     def update(self, SupportsKeysAndGetItem[str, object], /, **kwargs: object) -> None
+src/dashboard/Report_from_excel.py:926: note:     def update(self, Iterable[tuple[str, object]], /) -> None
+src/dashboard/Report_from_excel.py:926: note:     def update(self, Iterable[tuple[str, object]], /, **kwargs: object) -> None
+src/dashboard/Report_from_excel.py:926: note:     def update(self, **kwargs: object) -> None
+src/dashboard/Report_from_excel.py:930: error: "object" has no attribute "update"  [attr-defined]
+src/dashboard/Report_from_excel.py:940: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Report_from_excel.py:1712: error: Incompatible return value type (got "dict[Any, Any | None]", expected "dict[str, float]")  [return-value]
+src/dashboard/Report_from_excel.py:3218: error: Name "_prepare_table_data" already defined on line 3031  [no-redef]
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:989: error: Name "_get_chart_config" already defined on line 150  [no-redef]
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:1558: error: Name "setup_callbacks" already defined on line 544  [no-redef]
+src/scrapers/scrap_sam_main.py:884: error: Incompatible types in assignment (expression has type "float", variable has type "int")  [assignment]
+src/scrapers/scrap_sam_main.py:903: error: Unsupported right operand type for in ("object")  [operator]
+src/scrapers/scrap_sam_main.py:903: error: Value of type "object" is not indexable  [index]
+src/scrapers/scrap_sam_main.py:907: error: Unsupported right operand type for in ("object")  [operator]
+src/scrapers/scrap_sam_main.py:908: error: Value of type "object" is not indexable  [index]
+src/scrapers/scrap_sam_main.py:913: error: Unsupported right operand type for in ("object")  [operator]
+src/scrapers/scrap_sam_main.py:914: error: Value of type "object" is not indexable  [index]
+src/scrapers/scrap_sam_main.py:953: error: Value of type "object" is not indexable  [index]
+src/scrapers/scrap_sam_main.py:956: error: Value of type "object" is not indexable  [index]
+src/scrapers/scrap_sam_main.py:957: error: Unsupported target for indexed assignment ("object")  [index]
+src/scrapers/scrap_sam_main.py:958: error: Unsupported target for indexed assignment ("object")  [index]
+src/scrapers/scrap_sam_main.py:962: error: Value of type "object" is not indexable  [index]
+src/scrapers/scrap_sam_main.py:963: error: Unsupported target for indexed assignment ("object")  [index]
+src/scrapers/scrap_sam_main.py:964: error: Unsupported target for indexed assignment ("object")  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:884: error: Incompatible types in assignment (expression has type "float", variable has type "int")  [assignment]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:903: error: Unsupported right operand type for in ("object")  [operator]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:903: error: Value of type "object" is not indexable  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:907: error: Unsupported right operand type for in ("object")  [operator]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:908: error: Value of type "object" is not indexable  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:913: error: Unsupported right operand type for in ("object")  [operator]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:914: error: Value of type "object" is not indexable  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:953: error: Value of type "object" is not indexable  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:956: error: Value of type "object" is not indexable  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:957: error: Unsupported target for indexed assignment ("object")  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:958: error: Unsupported target for indexed assignment ("object")  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:962: error: Value of type "object" is not indexable  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:963: error: Unsupported target for indexed assignment ("object")  [index]
+src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:964: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:884: error: Incompatible types in assignment (expression has type "float", variable has type "int")  [assignment]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:903: error: Unsupported right operand type for in ("object")  [operator]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:903: error: Value of type "object" is not indexable  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:907: error: Unsupported right operand type for in ("object")  [operator]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:908: error: Value of type "object" is not indexable  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:913: error: Unsupported right operand type for in ("object")  [operator]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:914: error: Value of type "object" is not indexable  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:953: error: Value of type "object" is not indexable  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:956: error: Value of type "object" is not indexable  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:957: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:958: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:962: error: Value of type "object" is not indexable  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:963: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:964: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Dashboard_SM.py:9: error: Module "Report_from_excel" has no attribute "SSAAnalyzer"; maybe "SSAWeekAnalyzer"?  [attr-defined]
+src/dashboard/Class/main.py:193: error: Name "LogManager" already defined (possibly by an import)  [no-redef]
+src/scrapers/__init__.py:12: error: Module "scrapers.scrap_sam_main" has no attribute "main"  [attr-defined]
+Found 196 errors in 17 files (checked 31 source files)
+
+pytest -q:
+.......                                                                  [100%]
+7 passed in 0.53s
+

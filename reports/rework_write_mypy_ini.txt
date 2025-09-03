@@ -1,0 +1,1 @@
+mypy.ini escrito em /Users/menon/git/scrap_sam_rework/mypy.ini

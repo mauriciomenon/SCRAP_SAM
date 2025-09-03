@@ -1,0 +1,27 @@
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/run.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/utils/file_manager.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/data/ssa_columns.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/data/ssa_data.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/utils/data_validator.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/utils/log_manager.py
+reformatted /Users/menon/git/scrap_sam_rework/src/scrapers/__init__.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/dashboard/ssa_visualizer.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/data/data_loader.py
+reformatted /Users/menon/git/scrap_sam_rework/src/scrapers/legacy/scrap_BeautifulSoup.py
+reformatted /Users/menon/git/scrap_sam_rework/src/scrapers/legacy/Scrap-Playwright.py
+reformatted /Users/menon/git/scrap_sam_rework/src/scrapers/legacy/scrap_SAM.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Dashboard_SM.py
+reformatted /Users/menon/git/scrap_sam_rework/src/scrapers/legacy/Scrap-Playwright_otimizado.py
+reformatted /Users/menon/git/scrap_sam_rework/src/utils/Acha_botao.py
+reformatted /Users/menon/git/scrap_sam_rework/src/utils/scrap_installer.py
+reformatted /Users/menon/git/scrap_sam_rework/tests/test_sanity_imports.py
+reformatted /Users/menon/git/scrap_sam_rework/src/scrapers/legacy/scrap_SAM_BETA.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py
+reformatted /Users/menon/git/scrap_sam_rework/src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py
+reformatted /Users/menon/git/scrap_sam_rework/src/scrapers/scrap_sam_main.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/dashboard/ssa_dashboard.py
+reformatted /Users/menon/git/scrap_sam_rework/src/dashboard/Report_from_excel.py
+reformatted /Users/menon/git/scrap_sam_rework/src/utils/lixo_para_servir_de_base.py
+
+All done! ✨ 🍰 ✨
+24 files reformatted, 7 files left unchanged.

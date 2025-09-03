@@ -1,0 +1,8 @@
+Trivial flake8 fixes applied (whitespace/newline + explicit '# unused' imports only).
+Arquivos alterados: 6
+- /Users/menon/git/scrap_sam_rework/src/scrapers/scrap_sam_main.py
+- /Users/menon/git/scrap_sam_rework/src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py
+- /Users/menon/git/scrap_sam_rework/src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py
+- /Users/menon/git/scrap_sam_rework/src/scrapers/legacy/Scrap-Playwright_otimizado.py
+- /Users/menon/git/scrap_sam_rework/src/scrapers/legacy/Scrap-Playwright.py
+- /Users/menon/git/scrap_sam_rework/src/utils/lixo_para_servir_de_base.py

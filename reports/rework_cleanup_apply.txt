@@ -1,0 +1,11 @@
+Base: /Users/menon/git/scrap_sam_rework
+Itens analisados: 6
+Movidos: 6
+Erros: 0
+
+moved             /Users/menon/git/scrap_sam_rework/src/dashboard/tempCodeRunnerFile.py -> /Users/menon/git/scrap_sam_rework/bkp/src/dashboard/tempCodeRunnerFile.py  # Temp de editor
+moved             /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/dashboard/tempCodeRunnerFile.py -> /Users/menon/git/scrap_sam_rework/bkp/src/dashboard/Class/src/dashboard/tempCodeRunnerFile.py  # Temp de editor
+moved             /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/dashboard/ssa_dashboard - Copia.py -> /Users/menon/git/scrap_sam_rework/bkp/src/dashboard/Class/src/dashboard/ssa_dashboard - Copia.py  # Cópia redundante
+moved             /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/dashboard/ssa_visualizer - Copia.py -> /Users/menon/git/scrap_sam_rework/bkp/src/dashboard/Class/src/dashboard/ssa_visualizer - Copia.py  # Cópia redundante
+moved             /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/dashboard/ssa_dashboard - Copia (3).py -> /Users/menon/git/scrap_sam_rework/bkp/src/dashboard/Class/src/dashboard/ssa_dashboard - Copia (3).py  # Cópia redundante
+moved             /Users/menon/git/scrap_sam_rework/src/dashboard/Class/src/dashboard/ssa_dashboard - Copia (2).py -> /Users/menon/git/scrap_sam_rework/bkp/src/dashboard/Class/src/dashboard/ssa_dashboard - Copia (2).py  # Cópia redundante

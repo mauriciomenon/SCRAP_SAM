@@ -1,0 +1,47 @@
+Legacy:  /Users/menon/git/SCRAP_SAM/requirements.txt
+Rework:  /Users/menon/git/scrap_sam_rework/requirements.txt
+
+== Apenas no LEGADO ==
+black>=23.0.0
+dash-bootstrap-components>=1.5.0
+dash>=2.14.0
+flake8>=6.0.0
+mypy>=1.5.0
+pandas>=2.0.0
+playwright>=1.40.0
+plotly>=5.17.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+pytest>=7.4.0
+pyyaml>=6.0.0
+requests>=2.31.0
+selenium>=4.15.0
+
+== Apenas no REWORK ==
+black>=24.0.0
+dash-bootstrap-components>=1.6.0
+dash>=2.17.0
+flake8>=7.0.0
+flask>=3.0.0
+greenlet>=3.0.0
+ipykernel>=6.0.0
+jupyter>=1.0.0
+lxml>=5.2.0
+mypy>=1.8.0
+notebook>=7.0.0
+numpy>=1.26.0
+pandas>=2.2.0
+playwright>=1.45.0
+plotly>=5.20.0
+pytest-asyncio>=0.23.0
+pytest-playwright>=0.5.0
+pytest>=8.0.0
+python-dateutil>=2.9.0
+pytz>=2024.0
+requests>=2.32.0
+selenium>=4.20.0
+xlsxwriter>=3.2.0
+
+== Em ambos ==
+beautifulsoup4>=4.12.0
+openpyxl>=3.1.0

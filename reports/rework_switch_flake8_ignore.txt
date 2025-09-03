@@ -1,0 +1,1 @@
+.flake8: chave 'ignore' aplicada com E203,W503,E402,E501,E722.
