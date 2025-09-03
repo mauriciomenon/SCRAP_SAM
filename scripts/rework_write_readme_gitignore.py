@@ -284,6 +284,24 @@ Notas:
 - As versões acima refletem o alvo do rework e o que já foi observado no ambiente. Ajuste conforme o lock/constraints da sua equipe.
 - Para tipagem, considere `pandas-stubs`, `types-requests`, `types-PyYAML`, `types-psutil`.
 
+## O que são type stubs (stubs de tipos)?
+
+Type stubs são pacotes que fornecem apenas informações de tipos (arquivos .pyi) para bibliotecas que não têm anotações de tipo completas no próprio código. Eles:
+
+- Não mudam o comportamento em tempo de execução (não executam nada relevante no seu programa);
+- Ajudam ferramentas como o mypy a entender melhor as APIs de terceiros (pandas, requests, PyYAML, etc.);
+- Reduzem “ruído” de erros falsos de tipagem, deixando os avisos focados no seu código.
+
+Quando usar:
+- Se o mypy estiver reportando muitos erros vindos de bibliotecas externas, instale os stubs correspondentes.
+- Alternativa: manter `ignore_missing_imports = True` por módulo no mypy (menos preciso), já configurado para alguns casos.
+
+Como instalar (exemplos):
+- `pip install pandas-stubs`
+- `pip install types-requests types-PyYAML types-psutil`
+
+Observação: instalar stubs é seguro e não altera a execução do projeto; apenas melhora a análise estática de tipos.
+
 ## Node (opcional)
 
 Se você utilizar ferramentas Node neste repo:
