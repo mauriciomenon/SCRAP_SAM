@@ -1,0 +1,57 @@
+== SCRAP_SAM ==
+Repo: /Users/menon/git/SCRAP_SAM
+Branch: main
+-- status -sb --
+## main...origin/main
+ M reports/rework_sanity.txt
+?? reports/rework_commit_push.txt
+?? reports/rework_write_readme_gitignore.txt
+?? reports/session_snapshot_20250902.md
+
+-- staged --
+(none)
+Nothing to commit.
+
+== scrap_sam_rework ==
+Repo: /Users/menon/git/scrap_sam_rework
+Branch: main
+-- status -sb --
+## main...origin/main
+ M .envrc
+ M src/dashboard/Class/run.py
+ D "src/dashboard/Class/src/dashboard/ssa_dashboard - Copia (2).py"
+ D "src/dashboard/Class/src/dashboard/ssa_dashboard - Copia (3).py"
+ D "src/dashboard/Class/src/dashboard/ssa_dashboard - Copia.py"
+ M src/dashboard/Class/src/dashboard/ssa_dashboard.py
+ D "src/dashboard/Class/src/dashboard/ssa_visualizer - Copia.py"
+ M src/dashboard/Class/src/dashboard/ssa_visualizer.py
+ D src/dashboard/Class/src/dashboard/tempCodeRunnerFile.py
+ M src/dashboard/Class/src/data/data_loader.py
+ M src/dashboard/Class/src/data/ssa_columns.py
+ M src/dashboard/Class/src/data/ssa_data.py
+ M src/dashboard/Class/src/utils/data_validator.py
+ M src/dashboard/Class/src/utils/file_manager.py
+ M src/dashboard/Class/src/utils/log_manager.py
+ M src/dashboard/Dashboard_SM.py
+ M src/dashboard/Report_from_excel.py
+ M src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py
+ D src/dashboard/tempCodeRunnerFile.py
+ M src/scrapers/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py
+ M src/scrapers/__init__.py
+ M src/scrapers/legacy/Scrap-Playwright.py
+ M src/scrapers/legacy/Scrap-Playwright_otimizado.py
+ M src/scrapers/legacy/scrap_BeautifulSoup.py
+ M src/scrapers/legacy/scrap_SAM.py
+ M src/scrapers/legacy/scrap_SAM_BETA.py
+ M src/scrapers/scrap_sam_main.py
+ M src/utils/Acha_botao.py
+ M src/utils/lixo_para_servir_de_base.py
+ M src/utils/scrap_installer.py
+?? .env.example
+?? .python-version
+?? bkp/
+?? reports/diff_files.txt
+
+-- staged --
+(none)
+Nothing to commit.

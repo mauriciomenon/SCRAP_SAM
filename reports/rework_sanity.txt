@@ -232,72 +232,7 @@ usage: mypy [-h] [-v] [-V] [more options; see below]
 mypy: error: unrecognized arguments: --show-config
 
 mypy:
-src/dashboard/Class/src/data/ssa_columns.py:146: error: Argument 2 to "isinstance" has incompatible type "object"; expected "_ClassInfo"  [arg-type]
-src/dashboard/Class/src/dashboard/kpi_calculator.py:64: error: Incompatible return value type (got "dict[Any, Any | None]", expected "dict[str, float]")  [return-value]
 src/dashboard/Class/src/utils/file_manager.py:102: error: Item "None" of "datetime | None" has no attribute "strftime"  [union-attr]
-src/dashboard/Class/src/utils/data_validator.py:32: error: Need type annotation for "resp_counts" (hint: "resp_counts: dict[<type>, <type>] = ...")  [var-annotated]
-src/dashboard/Class/src/utils/data_validator.py:60: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
-src/dashboard/Class/src/utils/data_validator.py:61: error: Dict entry 1 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
-src/dashboard/Class/src/utils/data_validator.py:64: error: Dict entry 2 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
-src/dashboard/Class/src/utils/data_validator.py:67: error: Dict entry 3 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
-src/dashboard/Class/src/utils/data_validator.py:70: error: Dict entry 4 has incompatible type "str": "datetime"; expected "str": "dict[str, Any]"  [dict-item]
-src/dashboard/Class/src/utils/data_validator.py:102: error: "object" has no attribute "append"  [attr-defined]
-src/dashboard/Class/src/utils/data_validator.py:113: error: "object" has no attribute "append"  [attr-defined]
-src/dashboard/Class/src/utils/data_validator.py:121: error: "object" has no attribute "append"  [attr-defined]
-src/dashboard/Class/src/utils/data_validator.py:130: error: Argument 1 to "len" has incompatible type "object"; expected "Sized"  [arg-type]
-src/dashboard/Class/src/utils/data_validator.py:135: error: "object" has no attribute "append"  [attr-defined]
-src/dashboard/Class/src/utils/data_validator.py:147: error: Need type annotation for "real_counts" (hint: "real_counts: dict[<type>, <type>] = ...")  [var-annotated]
-src/dashboard/Class/src/utils/data_validator.py:202: error: Unsupported right operand type for in ("object")  [operator]
-src/dashboard/Class/src/utils/data_validator.py:203: error: Unsupported target for indexed assignment ("object")  [index]
-src/dashboard/Class/src/utils/data_validator.py:207: error: Value of type "object" is not indexable  [index]
-src/dashboard/Class/src/utils/data_validator.py:208: error: Value of type "object" is not indexable  [index]
-src/dashboard/Class/src/utils/data_validator.py:214: error: Unsupported right operand type for in ("object")  [operator]
-src/dashboard/Class/src/utils/data_validator.py:215: error: Unsupported target for indexed assignment ("object")  [index]
-src/dashboard/Class/src/utils/data_validator.py:219: error: Value of type "object" is not indexable  [index]
-src/dashboard/Class/src/utils/data_validator.py:220: error: Value of type "object" is not indexable  [index]
-src/dashboard/Class/src/utils/data_validator.py:228: error: Incompatible return value type (got "None", expected "dict[Any, Any]")  [return-value]
-src/dashboard/Class/src/data/data_loader.py:21: error: Need type annotation for "ssa_objects" (hint: "ssa_objects: list[<type>] = ...")  [var-annotated]
-src/dashboard/Class/src/data/data_loader.py:109: error: Argument 1 to "len" has incompatible type "None"; expected "Sized"  [arg-type]
-src/dashboard/Class/src/data/data_loader.py:150: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:151: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:157: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:158: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:174: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:175: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:185: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:192: error: Value of type "None" is not indexable  [index]
-src/dashboard/Class/src/data/data_loader.py:192: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:197: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:199: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:208: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:210: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:217: error: "None" has no attribute "iloc"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:245: error: Argument 1 to "len" has incompatible type "None"; expected "Sized"  [arg-type]
-src/dashboard/Class/src/data/data_loader.py:312: error: "None" has no attribute "iterrows"  [attr-defined]
-src/dashboard/Class/src/data/data_loader.py:317: error: Incompatible types in assignment (expression has type "None", variable has type "str")  [assignment]
-src/dashboard/Class/src/data/data_loader.py:328: error: Incompatible types in assignment (expression has type "None", variable has type "str")  [assignment]
-src/dashboard/Class/src/data/data_loader.py:348: error: Argument "emitida_em" to "SSAData" has incompatible type "Any | None"; expected "datetime"  [arg-type]
-src/scrapers/legacy/scrap_BeautifulSoup.py:20: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "name"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:21: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:21: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:22: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:22: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:23: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:23: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
-src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Argument 1 to "join" of "str" has incompatible type "Any | str | AttributeValueList | None"; expected "Iterable[str]"  [arg-type]
-src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Argument 2 to "get" of "Tag" has incompatible type "list[Never]"; expected "str | AttributeValueList | None"  [arg-type]
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: error: No overload variant of "update" of "MutableMapping" matches argument type "object"  [call-overload]
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note: Possible overload variants:
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, SupportsKeysAndGetItem[str, object], /) -> None
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, SupportsKeysAndGetItem[str, object], /, **kwargs: object) -> None
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, Iterable[tuple[str, object]], /) -> None
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, Iterable[tuple[str, object]], /, **kwargs: object) -> None
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, **kwargs: object) -> None
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:72: error: "object" has no attribute "update"  [attr-defined]
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:223: error: "SSAVisualizer" has no attribute "_create_empty_chart"; maybe "create_priority_chart" or "create_week_chart"?  [attr-defined]
-src/dashboard/Class/src/dashboard/ssa_visualizer.py:277: error: "SSAVisualizer" has no attribute "_create_empty_chart"; maybe "create_priority_chart" or "create_week_chart"?  [attr-defined]
 src/utils/Acha_botao.py:46: error: "WebElement" has no attribute "find_element_by_xpath"  [attr-defined]
 src/utils/Acha_botao.py:56: error: "WebDriver" has no attribute "find_elements_by_xpath"  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:90: error: Name "self" is not defined  [name-defined]
@@ -314,27 +249,84 @@ src/utils/lixo_para_servir_de_base.py:95: error: Name "self" is not defined  [na
 src/utils/lixo_para_servir_de_base.py:95: error: Name "data" is not defined  [name-defined]
 src/utils/lixo_para_servir_de_base.py:96: error: Name "self" is not defined  [name-defined]
 src/utils/lixo_para_servir_de_base.py:96: error: Name "data" is not defined  [name-defined]
-src/utils/lixo_para_servir_de_base.py:1261: error: Unsupported target for indexed assignment ("Any | None")  [index]
-src/utils/lixo_para_servir_de_base.py:1261: error: Value of type "Any | None" is not indexable  [index]
-src/utils/lixo_para_servir_de_base.py:1270: error: Value of type "Any | None" is not indexable  [index]
-src/utils/lixo_para_servir_de_base.py:1282: error: Item "None" of "Any | None" has no attribute "columns"  [union-attr]
-src/utils/lixo_para_servir_de_base.py:1285: error: Value of type "Any | None" is not indexable  [index]
-src/utils/lixo_para_servir_de_base.py:1286: error: Value of type "Any | None" is not indexable  [index]
+src/utils/lixo_para_servir_de_base.py:1261: error: Unsupported target for indexed assignment ("DataFrame | None")  [index]
+src/utils/lixo_para_servir_de_base.py:1261: error: Value of type "DataFrame | None" is not indexable  [index]
+src/utils/lixo_para_servir_de_base.py:1270: error: Value of type "DataFrame | None" is not indexable  [index]
+src/utils/lixo_para_servir_de_base.py:1282: error: Item "None" of "DataFrame | None" has no attribute "columns"  [union-attr]
+src/utils/lixo_para_servir_de_base.py:1285: error: Value of type "DataFrame | None" is not indexable  [index]
+src/utils/lixo_para_servir_de_base.py:1286: error: Value of type "DataFrame | None" is not indexable  [index]
 src/utils/lixo_para_servir_de_base.py:1338: error: Incompatible return value type (got "list[SSAData] | None", expected "list[SSAData]")  [return-value]
 src/utils/lixo_para_servir_de_base.py:1371: error: Name "_validate_dates" already defined on line 1258  [no-redef]
+src/utils/lixo_para_servir_de_base.py:1382: error: Incompatible return value type (got "numpy.bool[builtins.bool] | builtins.bool", expected "builtins.bool")  [return-value]
 src/utils/lixo_para_servir_de_base.py:1384: error: Name "_validate_priorities" already defined on line 1267  [no-redef]
 src/utils/lixo_para_servir_de_base.py:1395: error: Name "_validate_relationships" already defined on line 1280  [no-redef]
 src/utils/lixo_para_servir_de_base.py:1622: error: "DataLoader" has no attribute "_cache"  [attr-defined]
+src/utils/lixo_para_servir_de_base.py:1786: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:1786: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:1786: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:1796: error: Incompatible return value type (got "Series[float]", expected "float")  [return-value]
+src/utils/lixo_para_servir_de_base.py:1797: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:1797: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:1797: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:1807: error: Incompatible return value type (got "Series[float]", expected "float")  [return-value]
+src/utils/lixo_para_servir_de_base.py:1808: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:1808: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:1808: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:1844: error: Argument 2 to "polyfit" has incompatible type "ExtensionArray | ndarray[tuple[Any, ...], dtype[Any]]"; expected "_SupportsArray[dtype[numpy.bool[builtins.bool] | integer[Any] | floating[Any]]] | _NestedSequence[_SupportsArray[dtype[numpy.bool[builtins.bool] | integer[Any] | floating[Any]]]] | float | _NestedSequence[float]"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:1979: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:1979: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:1979: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:2015: error: Argument 2 to "polyfit" has incompatible type "ExtensionArray | ndarray[tuple[Any, ...], dtype[Any]]"; expected "_SupportsArray[dtype[numpy.bool[builtins.bool] | integer[Any] | floating[Any]]] | _NestedSequence[_SupportsArray[dtype[numpy.bool[builtins.bool] | integer[Any] | floating[Any]]]] | float | _NestedSequence[float]"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:2039: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2039: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2039: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:2057: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2057: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2057: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:2063: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2063: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2063: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:2069: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2069: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2069: note:     __class__: expected "type[int]", got "type[datetime]"
 src/utils/lixo_para_servir_de_base.py:2097: error: Unsupported target for indexed assignment ("object")  [index]
 src/utils/lixo_para_servir_de_base.py:2114: error: Unsupported target for indexed assignment ("object")  [index]
+src/utils/lixo_para_servir_de_base.py:2142: error: Argument 2 to "polyfit" has incompatible type "ExtensionArray | ndarray[tuple[Any, ...], dtype[Any]]"; expected "_SupportsArray[dtype[numpy.bool[builtins.bool] | integer[Any] | floating[Any]]] | _NestedSequence[_SupportsArray[dtype[numpy.bool[builtins.bool] | integer[Any] | floating[Any]]]] | float | _NestedSequence[float]"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:2181: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2181: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2181: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:2193: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2193: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2193: note:     __class__: expected "type[int]", got "type[datetime]"
 src/utils/lixo_para_servir_de_base.py:2202: error: Need type annotation for "intervals"  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:2212: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2212: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2212: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:2218: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2218: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2218: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:2230: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2230: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2230: note:     __class__: expected "type[int]", got "type[datetime]"
+src/utils/lixo_para_servir_de_base.py:2236: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:2236: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:2236: note:     __class__: expected "type[int]", got "type[datetime]"
 src/utils/lixo_para_servir_de_base.py:2282: error: "KPICalculator" has no attribute "_calculate_satisfaction_indicators"  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:2307: error: Unsupported target for indexed assignment ("object")  [index]
 src/utils/lixo_para_servir_de_base.py:2318: error: Unsupported target for indexed assignment ("object")  [index]
+src/utils/lixo_para_servir_de_base.py:2483: error: Dict entry 0 has incompatible type "str": "float"; expected "str": "int"  [dict-item]
+src/utils/lixo_para_servir_de_base.py:2486: error: Dict entry 3 has incompatible type "str": "float"; expected "str": "int"  [dict-item]
+src/utils/lixo_para_servir_de_base.py:2493: error: Dict entry 0 has incompatible type "str": "float"; expected "str": "int"  [dict-item]
+src/utils/lixo_para_servir_de_base.py:2496: error: Dict entry 3 has incompatible type "str": "float"; expected "str": "int"  [dict-item]
 src/utils/lixo_para_servir_de_base.py:2509: error: Incompatible types in assignment (expression has type "float", target has type "int")  [assignment]
 src/utils/lixo_para_servir_de_base.py:2510: error: Incompatible types in assignment (expression has type "floating[Any]", target has type "int")  [assignment]
 src/utils/lixo_para_servir_de_base.py:2530: error: Need type annotation for "distribution"  [var-annotated]
 src/utils/lixo_para_servir_de_base.py:2617: error: Incompatible types in assignment (expression has type "ndarray[tuple[Any, ...], dtype[Any]]", variable has type "list[int]")  [assignment]
+src/utils/lixo_para_servir_de_base.py:2931: error: Argument 2 to "polyfit" has incompatible type "ExtensionArray | ndarray[tuple[Any, ...], dtype[Any]]"; expected "_SupportsArray[dtype[numpy.bool[builtins.bool] | integer[Any] | floating[Any]]] | _NestedSequence[_SupportsArray[dtype[numpy.bool[builtins.bool] | integer[Any] | floating[Any]]]] | float | _NestedSequence[float]"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:3147: error: No overload variant of "__getitem__" of "list" matches argument type "Hashable"  [call-overload]
+src/utils/lixo_para_servir_de_base.py:3147: note: Possible overload variants:
+src/utils/lixo_para_servir_de_base.py:3147: note:     def __getitem__(self, SupportsIndex, /) -> str
+src/utils/lixo_para_servir_de_base.py:3147: note:     def __getitem__(self, slice[Any, Any, Any], /) -> list[str]
 src/utils/lixo_para_servir_de_base.py:3171: error: "KPICalculator" has no attribute "_analyze_priority_patterns"  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:3172: error: "KPICalculator" has no attribute "_analyze_sector_patterns"; maybe "_analyze_volume_patterns" or "_analyze_weekly_pattern"?  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:3173: error: "KPICalculator" has no attribute "_analyze_correlations"  [attr-defined]
@@ -342,15 +334,50 @@ src/utils/lixo_para_servir_de_base.py:3223: error: Name "get_overall_health_scor
 src/utils/lixo_para_servir_de_base.py:3560: error: "KPICalculator" has no attribute "kpi_calculator"  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:3608: error: Need type annotation for "bottlenecks"  [var-annotated]
 src/utils/lixo_para_servir_de_base.py:3705: error: Need type annotation for "efficiency_metrics"  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:3762: error: Unsupported operand types for - ("Series[Any]" and "datetime")  [operator]
+src/utils/lixo_para_servir_de_base.py:3762: note: Following member(s) of "datetime" have conflicts:
+src/utils/lixo_para_servir_de_base.py:3762: note:     __class__: expected "type[int]", got "type[datetime]"
 src/utils/lixo_para_servir_de_base.py:3940: error: Need type annotation for "_cache" (hint: "_cache: dict[<type>, <type>] = ...")  [var-annotated]
 src/utils/lixo_para_servir_de_base.py:3944: error: "SSADashboard" has no attribute "setup_callbacks"  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:3945: error: "SSADashboard" has no attribute "_setup_export_callbacks"  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:3947: error: "SSADashboard" has no attribute "_setup_alert_system"  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:3948: error: "SSADashboard" has no attribute "_setup_customization_options"  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:4150: error: Need type annotation for "node_adjacencies"  [var-annotated]
+src/utils/lixo_para_servir_de_base.py:4420: error: No overload variant of "__sub__" of "datetime" matches argument type "Series[Any]"  [operator]
+src/utils/lixo_para_servir_de_base.py:4420: note: Possible overload variants:
+src/utils/lixo_para_servir_de_base.py:4420: note:     def __sub__(self, datetime, /) -> timedelta
+src/utils/lixo_para_servir_de_base.py:4420: note:     def __sub__(self, timedelta, /) -> datetime
 src/utils/lixo_para_servir_de_base.py:4505: error: Name "LinearRegression" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:4541: error: Argument 1 to "std" has incompatible type "ExtensionArray | ndarray[tuple[Any, ...], dtype[Any]]"; expected "_SupportsArray[dtype[numpy.bool[builtins.bool] | number[Any, int | float | complex]]] | _NestedSequence[_SupportsArray[dtype[numpy.bool[builtins.bool] | number[Any, int | float | complex]]]] | complex | _NestedSequence[complex]"  [arg-type]
 src/utils/lixo_para_servir_de_base.py:4594: error: Name "LogisticRegression" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:4595: error: Unsupported operand types for < ("float" and "ExtensionArray")  [operator]
+src/utils/lixo_para_servir_de_base.py:4595: note: Left operand is of type "ExtensionArray | ndarray[tuple[Any, ...], dtype[Any]]"
 src/utils/lixo_para_servir_de_base.py:4682: error: Name "LinearRegression" is not defined  [name-defined]
+src/utils/lixo_para_servir_de_base.py:4991: error: No overload variant of "__sub__" of "datetime" matches argument type "Series[Any]"  [operator]
+src/utils/lixo_para_servir_de_base.py:4991: note: Possible overload variants:
+src/utils/lixo_para_servir_de_base.py:4991: note:     def __sub__(self, datetime, /) -> timedelta
+src/utils/lixo_para_servir_de_base.py:4991: note:     def __sub__(self, timedelta, /) -> datetime
+src/utils/lixo_para_servir_de_base.py:5010: error: Unsupported operand types for < ("float" and "object")  [operator]
+src/utils/lixo_para_servir_de_base.py:5010: error: Argument 1 to "abs" has incompatible type "str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]"; expected "SupportsAbs[object]"  [arg-type]
+src/utils/lixo_para_servir_de_base.py:5016: error: No overload variant of "__gt__" of "Timestamp" matches argument type "int"  [operator]
+src/utils/lixo_para_servir_de_base.py:5016: note: Possible overload variants:
+src/utils/lixo_para_servir_de_base.py:5016: note:     def __gt__(self, Timestamp | datetime | datetime64[date | int | None], /) -> bool
+src/utils/lixo_para_servir_de_base.py:5016: note:     def __gt__(self, DatetimeIndex, /) -> ndarray[tuple[int], dtype[numpy.bool[builtins.bool]]]
+src/utils/lixo_para_servir_de_base.py:5016: note:     def [ShapeT: tuple[int, ...]] __gt__(self, ndarray[ShapeT, dtype[datetime64[date | int | None]]], /) -> ndarray[ShapeT, dtype[numpy.bool[builtins.bool]]]
+src/utils/lixo_para_servir_de_base.py:5016: note:     def __gt__(self, TimestampSeries, /) -> Series[bool]
+src/utils/lixo_para_servir_de_base.py:5016: error: No overload variant of "__gt__" of "Timedelta" matches argument type "int"  [operator]
+src/utils/lixo_para_servir_de_base.py:5016: note:     def __gt__(self, timedelta | Timedelta | timedelta64[timedelta | int | None], /) -> bool
+src/utils/lixo_para_servir_de_base.py:5016: note:     def __gt__(self, TimedeltaIndex, /) -> ndarray[tuple[int], dtype[numpy.bool[builtins.bool]]]
+src/utils/lixo_para_servir_de_base.py:5016: note:     def [ShapeT: tuple[int, ...]] __gt__(self, ndarray[ShapeT, dtype[timedelta64[timedelta | int | None]]], /) -> ndarray[ShapeT, dtype[numpy.bool[builtins.bool]]]
+src/utils/lixo_para_servir_de_base.py:5016: note:     def __gt__(self, TimedeltaSeries | Series[Timedelta], /) -> Series[bool]
+src/utils/lixo_para_servir_de_base.py:5016: error: Unsupported operand types for < ("int" and "complex")  [operator]
+src/utils/lixo_para_servir_de_base.py:5016: note: Left operand is of type "str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]"
+src/utils/lixo_para_servir_de_base.py:5016: error: Unsupported operand types for > ("str" and "int")  [operator]
+src/utils/lixo_para_servir_de_base.py:5016: error: Unsupported operand types for > ("bytes" and "int")  [operator]
+src/utils/lixo_para_servir_de_base.py:5016: error: Unsupported operand types for > ("date" and "int")  [operator]
+src/utils/lixo_para_servir_de_base.py:5016: error: Unsupported operand types for > ("datetime" and "int")  [operator]
+src/utils/lixo_para_servir_de_base.py:5016: error: Unsupported operand types for > ("timedelta" and "int")  [operator]
+src/utils/lixo_para_servir_de_base.py:5018: error: Argument 3 to "_interpret_correlation" of "SSADashboard" has incompatible type "str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]"; expected "float"  [arg-type]
 src/utils/lixo_para_servir_de_base.py:5061: error: Invalid index type "tuple[str, ...]" for "dict[tuple[str, str], dict[str, str]]"; expected type "tuple[str, str]"  [index]
 src/utils/lixo_para_servir_de_base.py:5146: error: "SSADashboard" has no attribute "_create_performance_charts"; maybe "_create_performance_analysis" or "_create_advanced_charts"?  [attr-defined]
 src/utils/lixo_para_servir_de_base.py:5380: error: Name "temporal_perf" is not defined  [name-defined]
@@ -367,9 +394,21 @@ src/utils/lixo_para_servir_de_base.py:6976: error: Argument 3 to "_filter_log_en
 src/utils/lixo_para_servir_de_base.py:6976: error: Argument 4 to "_filter_log_entry" of "AdvancedLogger" has incompatible type "datetime | None"; expected "datetime"  [arg-type]
 src/utils/lixo_para_servir_de_base.py:7034: error: Name "main" already defined on line 5316  [no-redef]
 src/utils/lixo_para_servir_de_base.py:7036: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+src/scrapers/legacy/scrap_BeautifulSoup.py:20: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "name"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:21: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:21: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:22: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:22: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:23: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:23: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Item "PageElement" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Item "NavigableString" of "PageElement | Tag | NavigableString" has no attribute "get"  [union-attr]
+src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Argument 1 to "join" of "str" has incompatible type "Any | str | AttributeValueList | None"; expected "Iterable[str]"  [arg-type]
+src/scrapers/legacy/scrap_BeautifulSoup.py:24: error: Argument 2 to "get" of "Tag" has incompatible type "list[Never]"; expected "str | AttributeValueList | None"  [arg-type]
 src/dashboard/Report_from_excel.py:20: error: Cannot find implementation or library stub for module named "timedelta"  [import-not-found]
 src/dashboard/Report_from_excel.py:20: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
 src/dashboard/Report_from_excel.py:79: error: Need type annotation for "ssa_objects" (hint: "ssa_objects: list[<type>] = ...")  [var-annotated]
+src/dashboard/Report_from_excel.py:154: error: Incompatible types in assignment (expression has type "DataFrame", variable has type "None")  [assignment]
 src/dashboard/Report_from_excel.py:198: error: "None" has no attribute "iloc"  [attr-defined]
 src/dashboard/Report_from_excel.py:199: error: "None" has no attribute "iloc"  [attr-defined]
 src/dashboard/Report_from_excel.py:205: error: "None" has no attribute "iloc"  [attr-defined]
@@ -379,10 +418,21 @@ src/dashboard/Report_from_excel.py:223: error: "None" has no attribute "iloc"  [
 src/dashboard/Report_from_excel.py:232: error: Value of type "None" is not indexable  [index]
 src/dashboard/Report_from_excel.py:232: error: "None" has no attribute "iloc"  [attr-defined]
 src/dashboard/Report_from_excel.py:237: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:238: error: No overload variant of "to_numeric" matches argument types "Any", "str"  [call-overload]
+src/dashboard/Report_from_excel.py:238: note: Possible overload variants:
+src/dashboard/Report_from_excel.py:238: note:     def to_numeric(arg: str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> float
+src/dashboard/Report_from_excel.py:238: note:     def to_numeric(arg: list[Any] | tuple[Any, ...] | ndarray[tuple[Any, ...], dtype[Any]], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> ndarray[tuple[Any, ...], dtype[Any]]
+src/dashboard/Report_from_excel.py:238: note:     def to_numeric(arg: Series[Any], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> Series[Any]
 src/dashboard/Report_from_excel.py:239: error: "None" has no attribute "iloc"  [attr-defined]
 src/dashboard/Report_from_excel.py:248: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:249: error: No overload variant of "to_numeric" matches argument types "Any", "str"  [call-overload]
+src/dashboard/Report_from_excel.py:249: note: Possible overload variants:
+src/dashboard/Report_from_excel.py:249: note:     def to_numeric(arg: str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> float
+src/dashboard/Report_from_excel.py:249: note:     def to_numeric(arg: list[Any] | tuple[Any, ...] | ndarray[tuple[Any, ...], dtype[Any]], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> ndarray[tuple[Any, ...], dtype[Any]]
+src/dashboard/Report_from_excel.py:249: note:     def to_numeric(arg: Series[Any], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> Series[Any]
 src/dashboard/Report_from_excel.py:250: error: "None" has no attribute "iloc"  [attr-defined]
 src/dashboard/Report_from_excel.py:257: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Report_from_excel.py:270: error: Incompatible return value type (got "None", expected "DataFrame")  [return-value]
 src/dashboard/Report_from_excel.py:724: error: "SSAWeekAnalyzer" has no attribute "week_analyzer"  [attr-defined]
 src/dashboard/Report_from_excel.py:728: error: "SSAWeekAnalyzer" has no attribute "_get_standard_layout"  [attr-defined]
 src/dashboard/Report_from_excel.py:764: error: "SSAWeekAnalyzer" has no attribute "_get_standard_layout"  [attr-defined]
@@ -395,10 +445,36 @@ src/dashboard/Report_from_excel.py:926: note:     def update(self, Iterable[tupl
 src/dashboard/Report_from_excel.py:926: note:     def update(self, **kwargs: object) -> None
 src/dashboard/Report_from_excel.py:930: error: "object" has no attribute "update"  [attr-defined]
 src/dashboard/Report_from_excel.py:940: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Report_from_excel.py:1144: error: Argument "x_values" to "_get_standard_layout" of "SSAVisualizer" has incompatible type "Index[Any]"; expected "list[Any] | None"  [arg-type]
+src/dashboard/Report_from_excel.py:1200: error: Argument "x_values" to "_get_standard_layout" of "SSAVisualizer" has incompatible type "Series[Any]"; expected "list[Any] | None"  [arg-type]
+src/dashboard/Report_from_excel.py:1243: error: No overload variant of "groupby" of "Series" matches argument type "Categorical"  [call-overload]
+src/dashboard/Report_from_excel.py:1243: note: Possible overload variants:
+src/dashboard/Report_from_excel.py:1243: note:     def groupby(self, by: str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any], level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]]
+src/dashboard/Report_from_excel.py:1243: note:     def groupby(self, by: DatetimeIndex, level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, Timestamp]
+src/dashboard/Report_from_excel.py:1243: note:     def groupby(self, by: TimedeltaIndex, level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, Timedelta]
+src/dashboard/Report_from_excel.py:1243: note:     def groupby(self, by: PeriodIndex, level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, Period]
+src/dashboard/Report_from_excel.py:1243: note:     def [IntervalT: Interval[Any]] groupby(self, by: IntervalIndex[IntervalT], level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, IntervalT]
+src/dashboard/Report_from_excel.py:1243: note:     def groupby(self, by: MultiIndex | tuple[Any, ...] | list[Any] | ufunc | Callable[..., Any] | <9 more items>, level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, tuple[Any, ...]]
+src/dashboard/Report_from_excel.py:1243: note:     def groupby(self, by: None, level: Hashable | Sequence[Hashable], as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]]
+src/dashboard/Report_from_excel.py:1243: note:     def groupby(self, by: None = ..., *, level: Hashable | Sequence[Hashable], as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]]
+src/dashboard/Report_from_excel.py:1243: note:     def [SeriesByT: str | bytes | date | bool | int | <6 more items>] groupby(self, by: Series[SeriesByT], level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, SeriesByT]
+src/dashboard/Report_from_excel.py:1243: note:     def groupby(self, by: CategoricalIndex[Any] | Index[Any] | Series[Any], level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, Any]
 src/dashboard/Report_from_excel.py:1712: error: Incompatible return value type (got "dict[Any, Any | None]", expected "dict[str, float]")  [return-value]
+src/dashboard/Report_from_excel.py:1814: error: No overload variant of "__sub__" of "Timestamp" matches argument type "Series[Any]"  [operator]
+src/dashboard/Report_from_excel.py:1814: note: Possible overload variants:
+src/dashboard/Report_from_excel.py:1814: note:     def __sub__(self, Timestamp | datetime | datetime64[date | int | None], /) -> Timedelta
+src/dashboard/Report_from_excel.py:1814: note:     def __sub__(self, timedelta | timedelta64[timedelta | int | None] | Tick, /) -> Timestamp
+src/dashboard/Report_from_excel.py:1814: note:     def __sub__(self, TimedeltaIndex, /) -> DatetimeIndex
+src/dashboard/Report_from_excel.py:1814: note:     def __sub__(self, TimedeltaSeries, /) -> TimestampSeries
+src/dashboard/Report_from_excel.py:1814: note:     def __sub__(self, TimestampSeries, /) -> TimedeltaSeries
+src/dashboard/Report_from_excel.py:1814: note:     def [ShapeT: tuple[int, ...]] __sub__(self, ndarray[ShapeT, dtype[timedelta64[timedelta | int | None]]], /) -> ndarray[ShapeT, dtype[datetime64[date | int | None]]]
+src/dashboard/Report_from_excel.py:1838: error: Need type annotation for "weeks_waiting"  [var-annotated]
+src/dashboard/Report_from_excel.py:1839: error: No overload variant of "__getitem__" of "Series" matches argument type "Hashable"  [call-overload]
+src/dashboard/Report_from_excel.py:1839: note: Possible overload variants:
+src/dashboard/Report_from_excel.py:1839: note:     def __getitem__(self, list[str] | Index[Any] | Series[Any] | slice[Any, Any, Any] | Series[builtins.bool] | ndarray[tuple[Any, ...], dtype[numpy.bool[builtins.bool]]] | list[builtins.bool] | tuple[Hashable | slice[Any, Any, Any], ...], /) -> Series[Any]
+src/dashboard/Report_from_excel.py:1839: note:     def __getitem__(self, str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any], /) -> Any
 src/dashboard/Report_from_excel.py:3218: error: Name "_prepare_table_data" already defined on line 3031  [no-redef]
-src/dashboard/Class/src/dashboard/ssa_dashboard.py:989: error: Name "_get_chart_config" already defined on line 150  [no-redef]
-src/dashboard/Class/src/dashboard/ssa_dashboard.py:1558: error: Name "setup_callbacks" already defined on line 544  [no-redef]
+src/dashboard/Class/src/data/ssa_columns.py:146: error: Argument 2 to "isinstance" has incompatible type "object"; expected "_ClassInfo"  [arg-type]
 src/scrapers/scrap_sam_main.py:884: error: Incompatible types in assignment (expression has type "float", variable has type "int")  [assignment]
 src/scrapers/scrap_sam_main.py:903: error: Unsupported right operand type for in ("object")  [operator]
 src/scrapers/scrap_sam_main.py:903: error: Value of type "object" is not indexable  [index]
@@ -442,11 +518,93 @@ src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:962: error: 
 src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:963: error: Unsupported target for indexed assignment ("object")  [index]
 src/dashboard/Scrap-Playwright_otimizado_tratamento_de_erro_rede.py:964: error: Unsupported target for indexed assignment ("object")  [index]
 src/dashboard/Dashboard_SM.py:9: error: Module "Report_from_excel" has no attribute "SSAAnalyzer"; maybe "SSAWeekAnalyzer"?  [attr-defined]
-src/dashboard/Class/main.py:193: error: Name "LogManager" already defined (possibly by an import)  [no-redef]
+src/dashboard/Class/src/utils/data_validator.py:32: error: Need type annotation for "resp_counts" (hint: "resp_counts: dict[<type>, <type>] = ...")  [var-annotated]
+src/dashboard/Class/src/utils/data_validator.py:60: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:61: error: Dict entry 1 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:64: error: Dict entry 2 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:67: error: Dict entry 3 has incompatible type "str": "int"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:70: error: Dict entry 4 has incompatible type "str": "datetime"; expected "str": "dict[str, Any]"  [dict-item]
+src/dashboard/Class/src/utils/data_validator.py:102: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Class/src/utils/data_validator.py:113: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Class/src/utils/data_validator.py:121: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Class/src/utils/data_validator.py:130: error: Argument 1 to "len" has incompatible type "object"; expected "Sized"  [arg-type]
+src/dashboard/Class/src/utils/data_validator.py:135: error: "object" has no attribute "append"  [attr-defined]
+src/dashboard/Class/src/utils/data_validator.py:147: error: Need type annotation for "real_counts" (hint: "real_counts: dict[<type>, <type>] = ...")  [var-annotated]
+src/dashboard/Class/src/utils/data_validator.py:202: error: Unsupported right operand type for in ("object")  [operator]
+src/dashboard/Class/src/utils/data_validator.py:203: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Class/src/utils/data_validator.py:207: error: Value of type "object" is not indexable  [index]
+src/dashboard/Class/src/utils/data_validator.py:208: error: Value of type "object" is not indexable  [index]
+src/dashboard/Class/src/utils/data_validator.py:214: error: Unsupported right operand type for in ("object")  [operator]
+src/dashboard/Class/src/utils/data_validator.py:215: error: Unsupported target for indexed assignment ("object")  [index]
+src/dashboard/Class/src/utils/data_validator.py:219: error: Value of type "object" is not indexable  [index]
+src/dashboard/Class/src/utils/data_validator.py:220: error: Value of type "object" is not indexable  [index]
+src/dashboard/Class/src/utils/data_validator.py:228: error: Incompatible return value type (got "None", expected "dict[Any, Any]")  [return-value]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: error: No overload variant of "update" of "MutableMapping" matches argument type "object"  [call-overload]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note: Possible overload variants:
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, SupportsKeysAndGetItem[str, object], /) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, SupportsKeysAndGetItem[str, object], /, **kwargs: object) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, Iterable[tuple[str, object]], /) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, Iterable[tuple[str, object]], /, **kwargs: object) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:69: note:     def update(self, **kwargs: object) -> None
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:72: error: "object" has no attribute "update"  [attr-defined]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:146: error: Argument "x_values" to "_get_standard_layout" of "SSAVisualizer" has incompatible type "Index[Any]"; expected "list[Any] | None"  [arg-type]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:223: error: "SSAVisualizer" has no attribute "_create_empty_chart"; maybe "create_priority_chart" or "create_week_chart"?  [attr-defined]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: error: No overload variant of "groupby" of "Series" matches argument type "Categorical"  [call-overload]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note: Possible overload variants:
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def groupby(self, by: str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any], level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def groupby(self, by: DatetimeIndex, level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, Timestamp]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def groupby(self, by: TimedeltaIndex, level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, Timedelta]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def groupby(self, by: PeriodIndex, level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, Period]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def [IntervalT: Interval[Any]] groupby(self, by: IntervalIndex[IntervalT], level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, IntervalT]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def groupby(self, by: MultiIndex | tuple[Any, ...] | list[Any] | ufunc | Callable[..., Any] | <9 more items>, level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, tuple[Any, ...]]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def groupby(self, by: None, level: Hashable | Sequence[Hashable], as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def groupby(self, by: None = ..., *, level: Hashable | Sequence[Hashable], as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any]]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def [SeriesByT: str | bytes | date | bool | int | <6 more items>] groupby(self, by: Series[SeriesByT], level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, SeriesByT]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:234: note:     def groupby(self, by: CategoricalIndex[Any] | Index[Any] | Series[Any], level: Hashable | Sequence[Hashable] | None = ..., as_index: bool = ..., sort: bool = ..., group_keys: bool = ..., observed: bool | Literal[_NoDefault.no_default] = ..., dropna: bool = ...) -> SeriesGroupBy[int, Any]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:236: error: Incompatible types in assignment (expression has type "list[str]", variable has type "Index[Any]")  [assignment]
+src/dashboard/Class/src/dashboard/ssa_visualizer.py:277: error: "SSAVisualizer" has no attribute "_create_empty_chart"; maybe "create_priority_chart" or "create_week_chart"?  [attr-defined]
+src/dashboard/Class/src/dashboard/kpi_calculator.py:64: error: Incompatible return value type (got "dict[Any, Any | None]", expected "dict[str, float]")  [return-value]
 src/scrapers/__init__.py:12: error: Module "scrapers.scrap_sam_main" has no attribute "main"  [attr-defined]
-Found 196 errors in 17 files (checked 31 source files)
+src/dashboard/Class/src/data/data_loader.py:21: error: Need type annotation for "ssa_objects" (hint: "ssa_objects: list[<type>] = ...")  [var-annotated]
+src/dashboard/Class/src/data/data_loader.py:104: error: Incompatible types in assignment (expression has type "DataFrame", variable has type "None")  [assignment]
+src/dashboard/Class/src/data/data_loader.py:109: error: Argument 1 to "len" has incompatible type "None"; expected "Sized"  [arg-type]
+src/dashboard/Class/src/data/data_loader.py:112: error: Argument 1 to "diagnose_dates" has incompatible type "None"; expected "DataFrame"  [arg-type]
+src/dashboard/Class/src/data/data_loader.py:150: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:151: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:157: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:158: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:174: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:175: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:185: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:192: error: Value of type "None" is not indexable  [index]
+src/dashboard/Class/src/data/data_loader.py:192: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:197: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:198: error: No overload variant of "to_numeric" matches argument types "Any", "str"  [call-overload]
+src/dashboard/Class/src/data/data_loader.py:198: note: Possible overload variants:
+src/dashboard/Class/src/data/data_loader.py:198: note:     def to_numeric(arg: str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> float
+src/dashboard/Class/src/data/data_loader.py:198: note:     def to_numeric(arg: list[Any] | tuple[Any, ...] | ndarray[tuple[Any, ...], dtype[Any]], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> ndarray[tuple[Any, ...], dtype[Any]]
+src/dashboard/Class/src/data/data_loader.py:198: note:     def to_numeric(arg: Series[Any], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> Series[Any]
+src/dashboard/Class/src/data/data_loader.py:199: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:208: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:209: error: No overload variant of "to_numeric" matches argument types "Any", "str"  [call-overload]
+src/dashboard/Class/src/data/data_loader.py:209: note: Possible overload variants:
+src/dashboard/Class/src/data/data_loader.py:209: note:     def to_numeric(arg: str | bytes | date | datetime | timedelta | <7 more items> | complex | integer[Any] | floating[Any] | complexfloating[Any, Any], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> float
+src/dashboard/Class/src/data/data_loader.py:209: note:     def to_numeric(arg: list[Any] | tuple[Any, ...] | ndarray[tuple[Any, ...], dtype[Any]], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> ndarray[tuple[Any, ...], dtype[Any]]
+src/dashboard/Class/src/data/data_loader.py:209: note:     def to_numeric(arg: Series[Any], errors: Literal['raise', 'coerce'] = ..., downcast: Literal['integer', 'signed', 'unsigned', 'float'] | None = ..., dtype_backend: Literal['pyarrow', 'numpy_nullable'] | Literal[_NoDefault.no_default] = ...) -> Series[Any]
+src/dashboard/Class/src/data/data_loader.py:210: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:217: error: "None" has no attribute "iloc"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:245: error: Argument 1 to "len" has incompatible type "None"; expected "Sized"  [arg-type]
+src/dashboard/Class/src/data/data_loader.py:257: error: Incompatible return value type (got "None", expected "DataFrame")  [return-value]
+src/dashboard/Class/src/data/data_loader.py:312: error: "None" has no attribute "iterrows"  [attr-defined]
+src/dashboard/Class/src/data/data_loader.py:317: error: Incompatible types in assignment (expression has type "None", variable has type "str")  [assignment]
+src/dashboard/Class/src/data/data_loader.py:328: error: Incompatible types in assignment (expression has type "None", variable has type "str")  [assignment]
+src/dashboard/Class/src/data/data_loader.py:348: error: Argument "emitida_em" to "SSAData" has incompatible type "Any | None"; expected "datetime"  [arg-type]
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:989: error: Name "_get_chart_config" already defined on line 150  [no-redef]
+src/dashboard/Class/src/dashboard/ssa_dashboard.py:1558: error: Name "setup_callbacks" already defined on line 544  [no-redef]
+src/dashboard/Class/main.py:193: error: Name "LogManager" already defined (possibly by an import)  [no-redef]
+Found 256 errors in 17 files (checked 31 source files)
 
 pytest -q:
 .......                                                                  [100%]
-7 passed in 0.53s
+7 passed in 0.71s
 

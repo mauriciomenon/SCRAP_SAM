@@ -1,4 +1,4 @@
 Base: /Users/menon/git/scrap_sam_rework
-Arquivos verificados: 30
+Arquivos verificados: 36
 Erros de sintaxe: 0
 
